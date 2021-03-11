@@ -1,0 +1,11 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary d-flex mx-auto" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  <ul *ngIf="dataLoaded==true" class="list-group">
+    <li class="list-group-item active" >Renkler</li>
+    <li *ngFor="let color of colors;" class="list-group-item" >
+      {{ color.name }}
+    </li>
+  
+  </ul>
