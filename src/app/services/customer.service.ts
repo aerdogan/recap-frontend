@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CustomerResponseModel } from '../models/customer.ResponseModel';
+import { CustomerDetailsResponseModel, CustomerResponseModel } from '../models/customer.ResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,8 @@ export class CustomerService {
     return this.httpClient.get<CustomerResponseModel>(this.url + "getbyid?id=" + id)
   }
   
-  getCustomerDetails():Observable<CustomerResponseModel> {
-    return this.httpClient.get<CustomerResponseModel>(this.url + "getcustomerdetails")
+  getCustomerDetails():Observable<CustomerDetailsResponseModel> {
+    return this.httpClient.get<CustomerDetailsResponseModel>(this.url + "getcustomerdetails")
   }
   
 }

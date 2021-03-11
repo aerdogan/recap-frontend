@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { RentalResponseModel } from '../models/rental.ResponseModel';
+import { RentalDetailsResponseModel, RentalResponseModel } from '../models/rental.ResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,8 @@ export class RentalService {
     return this.httpClient.get<RentalResponseModel>(this.url + "getbyid?id=" + id)
   }
 
-  getRentalDetails():Observable<RentalResponseModel> {
-    return this.httpClient.get<RentalResponseModel>(this.url + "getrentaldetails")
+  getRentalDetails():Observable<RentalDetailsResponseModel> {
+    return this.httpClient.get<RentalDetailsResponseModel>(this.url + "getrentaldetails")
   }  
 
 }
