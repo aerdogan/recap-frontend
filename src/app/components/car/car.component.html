@@ -8,18 +8,16 @@
   
   <thead class="thead-dark">
     <tr>
-      <th scope="col">No</th>
       <th scope="col">Marka</th>
       <th scope="col">Renk</th>
       <th scope="col">Model</th>
-      <th scope="col">Günlük Fiyat</th>
+      <th scope="col">Fiyat</th>
       <th scope="col">Tanımlama</th>
     </tr>
   </thead>
 
   <tbody>
     <tr *ngFor="let car of cardetails" routerLink="/cardetail/{{ car.id }}">
-      <td>{{ car.id }}</td>
       <td>{{ car.brandName }}</td>
       <td>{{ car.colorName }}</td>
       <td>{{ car.modelYear }}</td>

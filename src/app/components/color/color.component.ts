@@ -10,7 +10,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
 
   colors: Color[] = [];
-  currentColor: Color;
+  currentColor: Color | null;
   dataLoaded = false;
   constructor(private colorService: ColorService) { }
 
@@ -27,6 +27,10 @@ export class ColorComponent implements OnInit {
 
   setCurrentColor(color:Color){
     this.currentColor = color;
+  }
+  
+  clearCurrentBrand(){
+    this.currentColor = null;
   }
 
   getCurrentColorClass(color:Color){

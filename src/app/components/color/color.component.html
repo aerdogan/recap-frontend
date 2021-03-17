@@ -4,7 +4,7 @@
 
 <ul *ngIf="dataLoaded==true" class="list-group">
 
-  <li routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
+  <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
   
   <li (click)="setCurrentColor(color)" 
     routerLink = "/cars/color/{{ color.id }}"
