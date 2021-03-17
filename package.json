@@ -21,7 +21,9 @@
     "@angular/router": "~11.2.4",
     "bootstrap": "^5.0.0-beta2",
     "bootswatch": "^4.6.0",
+    "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
+    "save": "^2.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

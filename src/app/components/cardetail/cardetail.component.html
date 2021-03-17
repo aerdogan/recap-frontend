@@ -1,0 +1,65 @@
+<div class="row">
+  
+  
+  <div class="col-md-8">
+
+
+    <div id="carouselExampleDark" class="carousel carousel-fade slide carousel-dark" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleDark" *ngFor="let li of carimages; let i = index" [attr.data-bs-slide-to]="i" [class]="i == 0 ? 'active' : ''"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div *ngFor="let car of carimages" [class]="getCurrentImageClass(car)" data-bs-interval="3000" >
+          <img src="https://localhost:44384/images/{{ car.imagePath }}" class="d-block w-100" alt="{{ car.imagePath }}" />
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+
+  
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="col-md-4">
+    <div *ngFor="let cardetail of cardetails" class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <strong> {{ cardetail.brandName }}</strong>
+        </h5>
+        <p class="card-text">{{ cardetail.description }}</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">İsim : {{ cardetail.name }}</li>
+        <li class="list-group-item">Model : {{ cardetail.modelYear }}</li>
+        <li class="list-group-item">Renk : {{ cardetail.colorName }}</li>
+        <li class="list-group-item">
+          Günlük Ücret : {{ cardetail.dailyPrice }} TL
+        </li>
+      </ul>
+
+      <div class="card-body">
+        <button type="button" class="btn btn-primary">Kirala</button>
+      </div>
+    </div>
+  </div>
+</div>

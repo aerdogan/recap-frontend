@@ -5,29 +5,24 @@
   <table *ngIf="dataLoaded==true" class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">No</th>
           <th scope="col">Müşteri</th>
-
           <th scope="col">Marka</th>
           <th scope="col">Model</th>
-          <th scope="col">Renk</th>          
+          <th scope="col">Renk</th>
           <th scope="col">Günlük Fiyat</th>
-
-          <th scope="col">Kira Tarihi</th>          
+          <th scope="col">Kira Tarihi</th>
           <th scope="col">Teslim Tarihi</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let rental of rentaldetails">
-          <td>{{ rental.id }}</td>
-          <td>{{ rental.firstName +" "+ rental.lastName }}</td>  
-
+          <td>{{ rental.firstName +" "+ rental.lastName }}</td>
           <td>{{ rental.brandName }}</td>
           <td>{{ rental.modelYear }}</td>
-          <td>{{ rental.colorName }}</td>          
-          <td>{{ rental.dailyPrice }}</td>                              
+          <td>{{ rental.colorName }}</td>
+          <td>{{ rental.dailyPrice }}</td>
           <td>{{ rental.rentDate  | date : 'dd-MM-YYYY HH:mm' }}</td>  
-          <td>{{(rental.returnDate == null)? "Araç Kirada": rental.returnDate | date:'dd-MM-YYYY HH:mm'}}</td>
+          <td>{{(rental.returnDate == null) ? "Araç Kirada": rental.returnDate | date:'dd-MM-YYYY HH:mm'}}</td>
         </tr>
       </tbody>
     </table>
