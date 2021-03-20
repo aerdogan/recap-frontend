@@ -5,8 +5,11 @@
 <ul *ngIf="dataLoaded==true" class="list-group">
 
   <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
+  <li class="list-group-item">  
+    <input type="text" class="form-control" id="renkarama" [(ngModel)]="filterText" placeholder="Renk ara">
+  </li>
   <li (click)="setCurrentColor(color)" routerLink = "/cars/color/{{ color.id }}"
-    *ngFor="let color of colors;"
+    *ngFor="let color of colors | colorFilter : filterText"
     [class]="getCurrentColorClass(color)">
     {{ color.name }}
   </li>

@@ -2,13 +2,42 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<h5>Araçlar</h5>
+<div class="d-flex justify-content-center">
+  <h5>Araç Listesi</h5>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-3">
+    <select class="form-select" id="markasec" [(ngModel)]="brandFilterText">
+      <option value="0" selected>Marka seç</option>
+      <option  *ngFor="let brand of brands" value="{{ brand.id }}">{{ brand.name }}</option>     
+    </select>
+  </div>
+
+  <div class="col-sm-3">
+    <select class="form-select" id="renksec" [(ngModel)]="colorFilterText">
+      <option value="0" selected>Renk Seç</option>
+      <option *ngFor="let color of colors" value="{{ color.id }}">{{ color.name }}</option> 
+    </select>    
+  </div>
+  <div class="col-sm-3">
+    <a type="button" routerLink=""  class="btn btn-primary">Filtrele</a>
+  </div>  
+  
+  <div class="col-sm-3">
+    <input type="text" class="form-control" id="aracarama" [(ngModel)]="carFilterText" placeholder="Araç ara">
+  </div>
+
+</div>
+
+<br />
 
 <table *ngIf="dataLoaded == true" class="table table-bordered table-condensed table-hover">
   
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Marka</th>
+      <th scope="col">İsim</th>
       <th scope="col">Renk</th>
       <th scope="col">Model</th>
       <th scope="col">Fiyat</th>
@@ -17,8 +46,8 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let car of cardetails" routerLink="/cardetail/{{ car.id }}">
-      <td>{{ car.brandName }}</td>
+    <tr *ngFor="let car of cardetails | carFilter: { brandId: brandFilterText, colorId:colorFilterText,  name: carFilterText} " routerLink="/cardetail/{{ car.id }}">
+      <td>{{ car.name }}</td>
       <td>{{ car.colorName }}</td>
       <td>{{ car.modelYear }}</td>
       <td>{{ car.dailyPrice }} TL</td>

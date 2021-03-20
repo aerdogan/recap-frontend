@@ -4,10 +4,13 @@
   
   <ul *ngIf="dataLoaded==true" class="list-group">
 
-    <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllBrandClass()">Tüm Markalar</li>    
+    <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllBrandClass()">Tüm Markalar</li>
+    <li class="list-group-item">  
+      <input type="text" class="form-control" id="markaarama" [(ngModel)]="brandFilterText" placeholder="Marka ara">
+    </li>
     <li (click)="setCurrentBrand(brand)" 
       routerLink = "/cars/brand/{{ brand.id }}"
-      *ngFor="let brand of brands;" 
+      *ngFor="let brand of brands | brandFilter : brandFilterText" 
       [class]="getCurrentBrandClass(brand)">{{ brand.name }}
     </li>  
   

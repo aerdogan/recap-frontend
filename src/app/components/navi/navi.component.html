@@ -1,36 +1,93 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Ren A Car</a>
+    <a class="navbar-brand" routerLink="">Ren A Car</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
         <li class="nav-item">
-          <a class="nav-link" href="/">Dashboard</a>
+          <a class="nav-link" routerLink="">Dashboard</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> İşlemler </a>
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            İşlemler
+          </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="customer">Müşteri Listesi</a></li>
-            <li><a class="dropdown-item" href="rental">Kira Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="cars">Araç Listesi</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="customer">Müşteri Listesi</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="rental">Kira Listesi</a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-
       </ul>
 
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Ara</button>
-      </form>
-
+      <div class="nav-item dropdown login-dropdown">
+        <a
+          href="#"
+          data-toggle="dropdown"
+          class="nav-item nav-link dropdown-toggle"
+          ><i class="fa fa-user-o"></i> Login</a
+        >
+        <div class="dropdown-menu">
+          <form
+            class="form-inline login-form"
+            action="/examples/actions/confirmation.php"
+            method="post"
+          >
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <span class="fa fa-user"></span>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                required=""
+              />
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Password"
+                required=""
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
