@@ -8,12 +8,12 @@
     <li class="list-group-item">  
       <input type="text" class="form-control" id="markaarama" [(ngModel)]="brandFilterText" placeholder="Marka ara">
     </li>
-    <li (click)="setCurrentBrand(brand)" 
-      routerLink = "/cars/brand/{{ brand.id }}"
+    <li  
       *ngFor="let brand of brands | brandFilter : brandFilterText" 
-      [class]="getCurrentBrandClass(brand)">{{ brand.name }}
-    </li>  
-  
+      (click)="setCurrentBrand(brand)" routerLink="cars" [queryParams]="{brandId: brand.id}" queryParamsHandling="merge"
+      [class]="getCurrentBrandClass(brand)"> {{ brand.name }}
+    </li>
+
   </ul>
 
 

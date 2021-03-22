@@ -1,8 +1,6 @@
 <div class="row">
 
-  <div class="col-md-8">
-
-
+  <div class="col-8">
     <div id="carouselExampleDark" class="carousel carousel-fade slide carousel-dark" data-bs-ride="carousel">
 
       <ol class="carousel-indicators">
@@ -11,7 +9,7 @@
 
       <div class="carousel-inner">
         <div *ngFor="let car of carimages" [class]="getCurrentImageClass(car)" data-bs-interval="3000" >
-          <img src="https://localhost:44384/images/{{ car.imagePath }}" class="d-block w-100" alt="{{ car.imagePath }}" />
+          <img src="https://localhost:44384/images/{{ car.imagePath }}" class="rounded mx-auto d-block w-100" alt="{{ car.imagePath }}" />
         </div>
       </div>
 
@@ -30,28 +28,39 @@
   </div>
 
 
+  <div class="col-4">
 
-  <div class="col-md-4">
-    <div *ngFor="let cardetail of cardetails" class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <strong> {{ cardetail.name }}</strong>
-        </h5>
-        <p class="card-text">{{ cardetail.description }}</p>
-      </div>
-
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Marka : {{ cardetail.brandName }}</li>
-        <li class="list-group-item">Model : {{ cardetail.modelYear }}</li>
-        <li class="list-group-item">Renk : {{ cardetail.colorName }}</li>
-        <li class="list-group-item">
-          Günlük Ücret : {{ cardetail.dailyPrice }} TL
-        </li>
-      </ul>
-
-      <div class="card-body">
-        <button type="button" class="btn btn-primary">Kirala</button>
-      </div>
+    <div *ngIf="isCartActive; else carRentalInfo">
+      <app-cart></app-cart>  
     </div>
+    
+    <ng-template #carRentalInfo>
+
+      <div *ngFor="let cardetail of cardetails" class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong> {{ cardetail.name }} - {{ cardetail.id }}</strong>
+          </h5>
+          <p class="card-text">{{ cardetail.description }}</p>
+        </div>
+  
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Marka : </strong>{{ cardetail.brandName }}</li>
+          <li class="list-group-item"><strong>Model : </strong>{{ cardetail.modelYear }}</li>
+          <li class="list-group-item"><strong>Renk : </strong>{{ cardetail.colorName }}</li>
+          <li class="list-group-item">
+            <strong>Günlük Ücret : </strong>{{ cardetail.dailyPrice }} TL
+          </li>
+        </ul>
+  
+        <div class="card-body">
+          <button type="button" (click)="setCartActive()"  class="btn btn-primary">Kirala</button>
+        </div>
+      </div>
+
+    </ng-template>
+
   </div>
+
 </div>
+

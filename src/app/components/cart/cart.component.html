@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header"><h5 class="title">Araç kirala - {{ currentCar.id }}   </h5></div>
+
+  <div class="card-body">
+
+    <form [formGroup]="rentalAddForm">
+
+      <div class="mb-3">
+        <label for="productName">Müşteri</label>
+        <div class="form-group">
+          <input type="hidden" class="form-control" id="carId" value="{{ currentCar}}" placeholder="{{ currentCar}}" formControlName="carId">
+          <select class="form-select">
+            <option [value]="customer.id" formControlName="customerId" *ngFor="let customer of customers">
+              {{ customer.firstName }} {{ customer.lastName }} | {{ customer.companyName }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="productName">Kiralama tarihi</label>
+        <div class="form-group">
+          <input type="date" id="rentDate" class="form-control" (change)="calcTotalPrice()"
+          formControlName="rentDate" min="{{ rentDate }}" value="{{ rentDate | date:'yyyy-MM-dd'}}"/>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="productName">Teslim tarihi</label>
+        <div class="form-group">
+          <input type="date" id="returnDate" class="form-control" (change)="calcTotalPrice()" 
+          formControlName="returnDate" min="{{ returnDate }}" value="{{ returnDate | date:'yyyy-MM-dd'}}">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="productName">Toplam ücret</label>
+        <div class="form-group"> <h4> {{ totalPrice }} TL </h4> </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn btn-fill btn-primary" (click)="add()">Onayla</button>
+  </div>
+
+
+</div>

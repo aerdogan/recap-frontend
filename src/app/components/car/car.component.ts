@@ -15,51 +15,49 @@ import { ColorService } from 'src/app/services/color.service';
 
 export class CarComponent implements OnInit {
 
-  cars: Car[] = [];
-  cardetails: CarDetail[] = [];  
-  
+  carDetails: CarDetail[] = []; // araç listesi
+
   brands: Brand[] = [];
   colors: Color[] = [];
   
-  carFilterText = "";
+  carFilter = "";
+  currentBrand:number;
+  currentColor:number;
 
-  colorFilterText = "0";
-  brandFilterText = "0";
-  
   dataLoaded = false;
 
   constructor(private carService: CarService, 
     private brandService: BrandService,
     private colorService: ColorService,
-    private activatedRoute:ActivatedRoute) {}
+    private activatedRoute:ActivatedRoute){}
 
   ngOnInit(): void {
+    this.getBrands(); // açılır kutu için markaları getir
+    this.getColors(); // açılır kutu için renkleeri getir
 
-    this.activatedRoute.params.subscribe(params=>{
+    this.activatedRoute.queryParams.subscribe(params => {
+      console.log(params);
       if(params["brandId"] && params["colorId"]){
-
-      } else if(params["brandId"]){
-        this.getCarDetailsByBrand(params["brandId"]);
-      } else if (params["colorId"]) {
+        this.getCarDetailsByBrandAndColor(params["brandId"], params["colorId"]);
+      } else if(params["colorId"]){
         this.getCarDetailsByColor(params["colorId"]);
+      } else if (params["brandId"]){
+        this.getCarDetailsByBrand(params["brandId"]);
       } else {
         this.getCarDetails();
       }
-
     });
-
-    this.getBrands();
-    this.getColors();
-
   }
 
-  getBrands() {
+  // markaları getir
+  getBrands() { 
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data;
       this.dataLoaded = true;
     });
   }
 
+  //renkleri getir
   getColors() {
     this.colorService.getColors().subscribe((response) => {
       this.colors = response.data;
@@ -67,31 +65,36 @@ export class CarComponent implements OnInit {
     });
   }
 
-  getCars() {
-    this.carService.getCars().subscribe((response) => {
-      this.cars = response.data;
-      this.dataLoaded = true;
-    });
-  }
-
+  // markaya göre araç bilgilerini getir
   getCarDetailsByBrand(brandId:number) {
     this.carService.getCarDetailsByBrand(brandId).subscribe((response) => {
-      this.cardetails = response.data;
+      this.carDetails = response.data;
       this.dataLoaded = true;
     });
   }
 
+  // renge göre araç bilgilerini getir
   getCarDetailsByColor(colorId:number) {
     this.carService.getCarDetailsByColor(colorId).subscribe((response) => {
-      this.cardetails = response.data;
+      this.carDetails = response.data;
+      this.dataLoaded = true;
+    });
+  }
+  
+  // marka ve renge göre araç bilgilerini getir
+  getCarDetailsByBrandAndColor(brandId:number, colorId:number) {
+    this.carService.getCarDetailsByBrandAndColor(brandId, colorId).subscribe((response) => {
+      this.carDetails = response.data;
       this.dataLoaded = true;
     });
   }
 
+  // araç detaylarını getir
   getCarDetails() {
     this.carService.getCarDetails().subscribe((response) => {
-      this.cardetails = response.data;
+      this.carDetails = response.data;
       this.dataLoaded = true;
     });
   }
+  
 }

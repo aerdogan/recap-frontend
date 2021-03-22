@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CarImage } from '../models/carimage';
-import { ListResponseModel } from '../models/ListResponseModel';
+import { ListResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'

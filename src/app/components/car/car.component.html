@@ -9,24 +9,25 @@
 <div class="row">
 
   <div class="col-sm-3">
-    <select class="form-select" id="markasec" [(ngModel)]="brandFilterText">
-      <option value="0" selected>Marka seç</option>
-      <option  *ngFor="let brand of brands" value="{{ brand.id }}">{{ brand.name }}</option>     
+    <select class="form-select" id="markasec" [(ngModel)]="currentBrand">
+      <option [ngValue]="undefined" selected>Bütün Markalar</option>
+      <option *ngFor="let brand of brands" value="{{ brand.id }}">{{ brand.name }}</option>     
     </select>
   </div>
 
   <div class="col-sm-3">
-    <select class="form-select" id="renksec" [(ngModel)]="colorFilterText">
-      <option value="0" selected>Renk Seç</option>
+    <select class="form-select" id="renksec" [(ngModel)]="currentColor">
+      <option [ngValue]="undefined" selected>Bütün Renkler</option>
       <option *ngFor="let color of colors" value="{{ color.id }}">{{ color.name }}</option> 
     </select>    
   </div>
+
   <div class="col-sm-3">
-    <a type="button" routerLink=""  class="btn btn-primary">Filtrele</a>
+    <a type="button" [routerLink]="['/cars']" [queryParams]="{brandId: currentBrand, colorId: currentColor}" class="btn btn-primary">Filtrele</a>
   </div>  
   
   <div class="col-sm-3">
-    <input type="text" class="form-control" id="aracarama" [(ngModel)]="carFilterText" placeholder="Araç ara">
+    <input type="text" class="form-control" id="aracarama" [(ngModel)]="carFilter" placeholder="Araç ara">
   </div>
 
 </div>
@@ -46,7 +47,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let car of cardetails | carFilter: { brandId: brandFilterText, colorId:colorFilterText,  name: carFilterText} " routerLink="/cardetail/{{ car.id }}">
+    <tr *ngFor="let car of carDetails | carFilter : carFilter" routerLink = "/cardetail" [queryParams]="{carId: car.id}">
       <td>{{ car.name }}</td>
       <td>{{ car.colorName }}</td>
       <td>{{ car.modelYear }}</td>
@@ -54,8 +55,8 @@
       <td>{{ car.description }}</td>
     </tr>
 
-    <tr *ngIf="!cardetails.length">
-      <td colspan="6">KAYITLI ARAÇ YOK</td>
+    <tr *ngIf="carDetails.length == 0">
+      <td colspan="5">KAYITLI ARAÇ YOK</td>
     </tr>    
   </tbody>
 

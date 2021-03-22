@@ -6,12 +6,12 @@
 
   <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
   <li class="list-group-item">  
-    <input type="text" class="form-control" id="renkarama" [(ngModel)]="filterText" placeholder="Renk ara">
+    <input type="text" class="form-control" id="renkarama" [(ngModel)]="colorFilterText" placeholder="Renk ara">
   </li>
-  <li (click)="setCurrentColor(color)" routerLink = "/cars/color/{{ color.id }}"
-    *ngFor="let color of colors | colorFilter : filterText"
-    [class]="getCurrentColorClass(color)">
-    {{ color.name }}
+  <li 
+    *ngFor="let color of colors | colorFilter : colorFilterText"
+    (click)="setCurrentColor(color)" routerLink="cars" [queryParams]="{colorId: color.id}" queryParamsHandling="merge"
+    [class]="getCurrentColorClass(color)"> {{ color.name }}
   </li>
 
 </ul>
