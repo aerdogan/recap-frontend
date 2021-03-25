@@ -13,10 +13,8 @@ import { CarDetailService } from 'src/app/services/cardetail.service';
 
 export class CardetailComponent implements OnInit {
 
-  cardetails : CarDetail[] = [];
+  cardetail : CarDetail;
   carimages : CarImage[] = [];
-
-  isCartActive : boolean;
 
   constructor( 
     private carService: CarService, 
@@ -24,8 +22,7 @@ export class CardetailComponent implements OnInit {
     private activatedRoute:ActivatedRoute) {}
 
   ngOnInit(): void {    
-    this.activatedRoute.params.subscribe(params=>{
-      console.log(params["carId"]);
+    this.activatedRoute.queryParams.subscribe(params=>{
       if(params["carId"]){
         this.getCarDetailsById(params["carId"]); // araç detaylarını getir
         this.getImagesByCarId(params["carId"]);  // araç resimlerini getir
@@ -33,15 +30,10 @@ export class CardetailComponent implements OnInit {
     })
   }
 
-  // kiralama bileşenini aç
-  setCartActive(){
-    this.isCartActive = true;
-  }
-
   // seçili araç detaylarını getir
   getCarDetailsById(carId:number){
     this.carService.getCarDetailsById(carId).subscribe(response=>{
-      this.cardetails = response.data;
+      this.cardetail = response.data;
     })
   }
 

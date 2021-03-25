@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CarDetail } from '../models/car';
 import { Rental, RentalDetail } from '../models/rental';
 import { ListResponseModel, ResponseModel } from '../models/responseModel';
 
@@ -14,9 +15,9 @@ export class RentalService {
 
   constructor(private httpClient: HttpClient) { }
 
-  add(rental:Rental):Observable<ResponseModel> {
+  add(rental:Rental):Observable<ListResponseModel<CarDetail>> {
     let newPath = this.url + "add";
-    return this.httpClient.post<ResponseModel>(newPath, rental);
+    return this.httpClient.post<ListResponseModel<CarDetail>>(newPath, rental);
   }
 
   getRentals():Observable<ListResponseModel<Rental>> {

@@ -17,7 +17,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { CarFilterPipe } from './pipes/car-filter.pipe';
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { CartComponent } from './components/cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { CartComponent } from './components/cart/cart.component';
     BrandFilterPipe,
     ColorFilterPipe,
     CarFilterPipe,
+    RentalAddComponent,
+    PaymentComponent,
     CartComponent
   ],
   imports: [

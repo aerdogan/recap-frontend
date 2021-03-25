@@ -1,0 +1,64 @@
+<div class="card mt-4">
+  <div class="card-header text-center">
+    <strong>Ödeme İşlemleri</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-2"></div>
+
+      <div class="col-8">
+        <form [formGroup]="paymentForm">
+          <div class="mb-3">
+            <label for="adsoyad">Kart Sahibinin Adı Soyadı</label>
+            <input type="text" class="form-control" id="adsoyad" />
+          </div>
+
+          <div class="mb-3">
+            <label for="cardNumber">Kart Numarası</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cardNumber"
+              placeholder="0000-0000-0000-0000"
+            />
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="expiration">Son Kullanma Tarihi</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="expiration"
+                  placeholder="03/23"
+                />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="cardCvv">Guvenlik Kodu</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cardCvv"
+                  placeholder="000"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4" style="text-align: center">
+        <button class="btn btn-success">Ödeme Yap</button>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+</div>

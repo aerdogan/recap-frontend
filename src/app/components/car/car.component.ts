@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from 'src/app/models/brand';
-import { Car, CarDetail } from 'src/app/models/car';
+import { CarDetail } from 'src/app/models/car';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
@@ -36,7 +36,6 @@ export class CarComponent implements OnInit {
     this.getColors(); // açılır kutu için renkleeri getir
 
     this.activatedRoute.queryParams.subscribe(params => {
-      console.log(params);
       if(params["brandId"] && params["colorId"]){
         this.getCarDetailsByBrandAndColor(params["brandId"], params["colorId"]);
       } else if(params["colorId"]){

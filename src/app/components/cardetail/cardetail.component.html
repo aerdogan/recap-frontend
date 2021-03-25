@@ -30,35 +30,28 @@
 
   <div class="col-4">
 
-    <div *ngIf="isCartActive; else carRentalInfo">
-      <app-cart></app-cart>  
-    </div>
-    
-    <ng-template #carRentalInfo>
-
-      <div *ngFor="let cardetail of cardetails" class="card">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <strong> {{ cardetail.name }} - {{ cardetail.id }}</strong>
+            <strong> {{ cardetail?.name }}</strong>
           </h5>
-          <p class="card-text">{{ cardetail.description }}</p>
+          <p class="card-text">{{ cardetail?.description }}</p>
         </div>
   
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Marka : </strong>{{ cardetail.brandName }}</li>
-          <li class="list-group-item"><strong>Model : </strong>{{ cardetail.modelYear }}</li>
-          <li class="list-group-item"><strong>Renk : </strong>{{ cardetail.colorName }}</li>
+          <li class="list-group-item"><strong>Marka : </strong>{{ cardetail?.brandName }}</li>
+          <li class="list-group-item"><strong>Model : </strong>{{ cardetail?.modelYear }}</li>
+          <li class="list-group-item"><strong>Renk : </strong>{{ cardetail?.colorName }}</li>
           <li class="list-group-item">
-            <strong>Günlük Ücret : </strong>{{ cardetail.dailyPrice }} TL
+            <strong>Günlük Ücret : </strong>{{ cardetail?.dailyPrice }} TL
           </li>
         </ul>
   
         <div class="card-body">
-          <button type="button" (click)="setCartActive()"  class="btn btn-primary">Kirala</button>
+          <button type="button"  [routerLink]="['/rental/add']" [queryParams]="{carId: cardetail?.id}"  class="btn btn-primary">Kirala</button>
         </div>
       </div>
 
-    </ng-template>
 
   </div>
 

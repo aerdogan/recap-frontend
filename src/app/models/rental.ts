@@ -16,3 +16,4 @@ export interface RentalDetail extends Rental{
     modelYear:string;
     dailyPrice:string;
 }
+
