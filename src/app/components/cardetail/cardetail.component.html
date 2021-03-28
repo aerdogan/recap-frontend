@@ -48,7 +48,8 @@
         </ul>
   
         <div class="card-body">
-          <button type="button" [routerLink]="['/rental/add']" [queryParams]="{carId: cardetail?.id}"  class="btn btn-primary">Kirala</button>
+            <button type="button" [hidden]="!isCarAvail" [routerLink]="['/rental/add']" [queryParams]="{carId: cardetail?.id}"  class="btn btn-primary">Kirala</button>
+            <h4 *ngIf="!isCarAvail" ><p>ARAÇ MÜSAİT DEĞİL</p></h4>
         </div>
       </div>
 

@@ -44,7 +44,7 @@ export class CardetailComponent implements OnInit {
 
   isCarAvailable(carId:number) {
     this.rentalService.isCarAvailable(carId).subscribe(
-      response=>{
+      response=>{        
         this.isCarAvail = response
       }, 
       responseError=>
