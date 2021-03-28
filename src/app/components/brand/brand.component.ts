@@ -10,51 +10,38 @@ import { BrandService } from 'src/app/services/brand.service';
 
 export class BrandComponent implements OnInit {
 
-  brands : Brand[] = []; // marka listesi
-  currentBrand : Brand;  // seçili marka
-  brandFilterText = "";  // aramak için yazılan marka
-  dataLoaded = false;    // veri yüklenme durumu
+  brands : Brand[] = []
+  currentBrand : Brand
+  brandFilterText : string
+  dataLoaded = false
   
   constructor(private brandService: BrandService) { }
 
   ngOnInit(): void {
-    this.getBrands();  // bileşen ilk oluştuğunda markaları getir
+    this.getBrands();
   }
 
-  // markaları getir
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
-      this.brands = response.data;
-      this.dataLoaded = true;
+      this.brands = response.data
+      this.dataLoaded = true
     });
   }
 
-  // seçili markaya göre filtrelemek için markayı set ediyoruz
   setCurrentBrand(brand:Brand){
-    this.currentBrand = brand;
+    this.currentBrand = brand
   }
 
-  // seçili markaya göre listedeki elemanın css'ini aktif et 
   getCurrentBrandClass(brand:Brand){
-    if(brand==this.currentBrand){
-      return "list-group-item active";
-    } else {
-      return "list-group-item";
-    }
+    if(brand==this.currentBrand){ return "list-group-item active" } 
+    else { return "list-group-item" }
   }
 
-  // tüm markaları getirmesi için seçili markayı temizliyoruz 
-  clearCurrentBrand(){
-    this.currentBrand = null;
-  }
+  clearCurrentBrand(){ this.currentBrand = null }
 
-  // tüm markalar seçili ise tüm markalar butonunun css'ini aktif et
   getAllBrandClass(){
-    if(!this.currentBrand){
-      return "list-group-item active";
-    } else {
-      return "list-group-item";
-    }
+    if(!this.currentBrand){ return "list-group-item active"} 
+    else { return "list-group-item" }
   }
 
 }

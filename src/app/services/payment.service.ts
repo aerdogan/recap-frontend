@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Payment } from '../models/payment';
 import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
@@ -14,9 +15,9 @@ export class PaymentService {
 
   constructor(private httpClient: HttpClient) { }
 
-  payment():Observable<ResponseModel> {
+  payment(payment:Payment):Observable<ResponseModel> {
     let newPath = this.url + "payment";
-    return this.httpClient.post<ResponseModel>(newPath, true);
+    return this.httpClient.post<ResponseModel>(newPath, payment); // fake true
   }
 
 }

@@ -1,28 +1,58 @@
-<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-danger d-flex mx-auto" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-danger d-flex mx-auto"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<h5><p class="font-weight-bold">Sepet</p></h5>
+
+<table *ngIf="dataLoaded == true" class="table table-bordered table-condensed table-hover" >
+  <thead class="thead-dark">
+    <tr>
+      <th>Marka</th>
+      <th>Model</th>
+      <th>Renk</th>
+      <th>Günlük Fiyat</th>
+      <th>Kira Tarihi</th>
+      <th>Teslim Tarihi</th>
+      <th>Toplam</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of cartItems">
+      <td>{{ cart.brandName }}</td>
+      <td>{{ cart.modelYear }}</td>
+      <td>{{ cart.colorName }}</td>
+      <td class="text-right">{{ cart.dailyPrice }} TL</td>
+      <td>{{ cart.rentDate | date: "dd.MM.YYYY" }}</td>
+      <td>{{ cart.returnDate | date: "dd.MM.YYYY" }}</td>
+      <td class="text-right">{{ cart.totalPrice }} TL</td>
+      <td class="text-center">
+        <button type="button" (click)="removeFromCart(cart)" class="btn btn-primary">
+          Sil
+        </button>
+      </td>
+    </tr>
+
+    <tr *ngIf="cartItems.length == 0">
+      <td colspan="8">SEPETİNİZ BOŞ</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="cartItems.length > 0">
+  <div class="row">
+    <div class="col-8">
+      <h5>
+        Toplam Tutar : <strong>{{ cartTotal }}</strong> TL
+      </h5>
+    </div>
+    
+    <div class="col-4">
+      <button type="button" [routerLink]="['/payment']" class="btn btn-success float-right"> Ödeme </button>
+    </div>
   </div>
-  <h5>Sepet</h5>
-  <table *ngIf="dataLoaded==true" class="table table-bordered table-condensed table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Müşteri</th>
-          <th scope="col">Marka</th>
-          <th scope="col">Model</th>
-          <th scope="col">Renk</th>
-          <th scope="col">Günlük Fiyat</th>
-          <th scope="col">Kira Tarihi</th>
-          <th scope="col">Teslim Tarihi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cart of cartItems">
-          <td>{{ cart.firstName +" "+ cart.lastName }}</td>
-          <td>{{ cart.brandName }}</td>
-          <td>{{ cart.modelYear }}</td>
-          <td>{{ cart.colorName }}</td>
-          <td>{{ cart.dailyPrice }} TL</td>
-          <td>{{ cart.rentDate  | date : 'dd-MM-YYYY' }}</td>  
-          <td>{{(cart.returnDate == null) ? "Araç Kirada": cart.returnDate | date:'dd-MM-YYYY'}}</td>
-        </tr>
-      </tbody>
-    </table> -->
+</div>

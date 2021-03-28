@@ -30,6 +30,11 @@ export class RentalService {
     return this.httpClient.get<ListResponseModel<Rental>>(newPath);
   }
 
+  isCarAvailable(carId:number):Observable<boolean> {
+    let newPath = this.url + "iscaravailable?carId=" + carId;
+    return this.httpClient.get<boolean>(newPath);
+  }
+
   getRentalDetails():Observable<ListResponseModel<RentalDetail>> {
     let newPath = this.url + "getrentaldetails";
     return this.httpClient.get<ListResponseModel<RentalDetail>>(newPath);

@@ -2,9 +2,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<div class="d-flex justify-content-center">
-  <h5>Araç Listesi</h5>
-</div>
+<h5><p class="font-weight-bold">Araç Listesi</p></h5>
 
 <div class="row">
 
@@ -23,7 +21,8 @@
   </div>
 
   <div class="col-sm-3">
-    <a type="button" [routerLink]="['/cars']" [queryParams]="{brandId: currentBrand, colorId: currentColor}" class="btn btn-primary">Filtrele</a>
+    <a type="button" [routerLink]="['/cars']" [queryParams]="{brandId: currentBrand, colorId: currentColor}" 
+    class="btn btn-primary">Filtrele</a>
   </div>  
   
   <div class="col-sm-3">

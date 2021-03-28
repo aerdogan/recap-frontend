@@ -15,16 +15,15 @@ import { ColorService } from 'src/app/services/color.service';
 
 export class CarComponent implements OnInit {
 
-  carDetails: CarDetail[] = []; // araç listesi
-
-  brands: Brand[] = [];
-  colors: Color[] = [];
+  carDetails: CarDetail[] = []
+  brands: Brand[] = []
+  colors: Color[] = []
   
-  carFilter = "";
-  currentBrand:number;
-  currentColor:number;
+  carFilter : string
+  currentBrand : number
+  currentColor : number
 
-  dataLoaded = false;
+  dataLoaded = false
 
   constructor(private carService: CarService, 
     private brandService: BrandService,
@@ -32,19 +31,14 @@ export class CarComponent implements OnInit {
     private activatedRoute:ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getBrands(); // açılır kutu için markaları getir
-    this.getColors(); // açılır kutu için renkleeri getir
+    this.getBrands()
+    this.getColors()
 
     this.activatedRoute.queryParams.subscribe(params => {
-      if(params["brandId"] && params["colorId"]){
-        this.getCarDetailsByBrandAndColor(params["brandId"], params["colorId"]);
-      } else if(params["colorId"]){
-        this.getCarDetailsByColor(params["colorId"]);
-      } else if (params["brandId"]){
-        this.getCarDetailsByBrand(params["brandId"]);
-      } else {
-        this.getCarDetails();
-      }
+      if(params["brandId"] && params["colorId"]){ this.getCarDetailsByBrandAndColor(params["brandId"], params["colorId"]) } 
+      else if(params["colorId"]){ this.getCarDetailsByColor(params["colorId"]) } 
+      else if (params["brandId"]){ this.getCarDetailsByBrand(params["brandId"]) } 
+      else { this.getCarDetails() }
     });
   }
 

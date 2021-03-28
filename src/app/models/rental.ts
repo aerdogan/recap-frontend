@@ -2,8 +2,8 @@ export interface Rental{
     id:number;
     carId:number;
     customerId:number;
-    rentDate:string;
-    returnDate:string;
+    rentDate:Date;
+    returnDate:Date;
 }
 
 export interface RentalDetail extends Rental{
@@ -13,7 +13,7 @@ export interface RentalDetail extends Rental{
     brandName:string;
     colorName:string;
     description:string;
-    modelYear:string;
-    dailyPrice:string;
+    modelYear:number;
+    dailyPrice:number;
 }
 

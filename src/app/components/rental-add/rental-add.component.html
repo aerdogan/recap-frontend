@@ -1,12 +1,12 @@
 <div class="card">
-  <div class="card-header"><h5 class="title">Araç kirala </h5></div>
+  <div class="card-header"><h5 class="title font-weight-bold">Araç kirala </h5></div>
 
   <div class="card-body">
 
     <form [formGroup]="rentalAddForm">
 
       <div class="mb-3">
-        <label for="productName">Müşteri </label>
+        <label for="customerId">Müşteri </label>
         <div class="form-group">
 
           <select id="customerId" class="form-select"  formControlName="customerId">
@@ -17,7 +17,7 @@
       </div>
  
       <div class="mb-3">
-        <label for="productName">Kiralama tarihi</label>
+        <label for="rentDate">Kiralama tarihi</label>
         <div class="form-group">
           <input type="date" id="rentDate" class="form-control" (change)="calcTotalPrice()"
           formControlName="rentDate"  min="{{ rentDate | date:'yyyy-MM-dd' }}"  value="{{ rentDate | date:'yyyy-MM-dd' }}"/>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="productName">Teslim tarihi</label>
+        <label for="returnDate">Teslim tarihi</label>
         <div class="form-group">
           <input type="date" id="returnDate" class="form-control" (change)="calcTotalPrice()"
           formControlName="returnDate" min="{{ returnDate | date:'yyyy-MM-dd' }}"  value="{{ returnDate | date:'yyyy-MM-dd' }}">
@@ -33,8 +33,8 @@
       </div>
 
       <div class="mb-3">
-        <label for="productName">Toplam ücret</label>
-        <div class="form-group"> <h4> {{ totalPrice }} TL </h4> </div>
+        <label for="totalPrice">Toplam ücret</label>
+        <div class="form-group" id="totalPrice"> <h4> {{ totalPrice }} TL </h4> </div>
       </div> 
 
     </form>
@@ -42,7 +42,7 @@
   </div>
 
   <div class="card-footer">
-    <button class="btn btn-fill btn-primary" (click)="addToCart()" >Sepete Ekle</button>
+    <button class="btn btn-fill btn-primary" [routerLink]="['/cart']" (click)="addToCart()" >Sepete Ekle</button>
   </div>
 
 </div>

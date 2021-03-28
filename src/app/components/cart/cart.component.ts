@@ -8,10 +8,15 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent implements OnInit {
+
   cartItems:CartItem[]=[];
   dataLoaded = false;
-  
+
+  cartTotal:number;
+
+
   constructor(
     private cartService:CartService,
     private toastrService:ToastrService) { }
@@ -21,11 +26,18 @@ export class CartComponent implements OnInit {
   }
 
   getCart(){
-    this.cartItems = this.cartService.list();
+    this.cartItems = this.cartService.cartList();
+    this.cartService.calculateCart(this.cartItems);
+    
+    this.cartService.cartSummary.subscribe(response => {
+      this.cartTotal = response;
+    });
+
+    this.dataLoaded = true;    
   }
 
   removeFromCart(cartItem:CartItem){
     this.cartService.removeFromCart(cartItem);
-    this.toastrService.error(cartItem.rental.brandName + "Sepetten silindi!", "Silindi");
+    this.toastrService.error(cartItem.brandName + " sepetten silindi.", "Sil");
   }
 }
