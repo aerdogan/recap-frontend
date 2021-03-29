@@ -8,7 +8,7 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { CardetailComponent } from './components/cardetail/cardetail.component';
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
@@ -20,6 +20,17 @@ import { CarFilterPipe } from './pipes/car-filter.pipe';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { ColorsComponent } from './components/colors/colors.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
 
 
 @NgModule({
@@ -38,7 +49,17 @@ import { CartComponent } from './components/cart/cart.component';
     CarFilterPipe,
     RentalAddComponent,
     PaymentComponent,
-    CartComponent
+    CartComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    BrandsComponent,
+    ColorsComponent,
+    CarsComponent,
+    LoginComponent,
+    BrandUpdateComponent,
+    ColorUpdateComponent,
+    CarUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +72,7 @@ import { CartComponent } from './components/cart/cart.component';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [ {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,9 +20,16 @@
           <a class="nav-link" routerLink="">Dashboard</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="cars">Araçlar</a>
-        </li>
+        <li class="nav-item dropdown">
+          
+          <a  class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown">Yönetim</a>
+
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+            <li><a class="dropdown-item" routerLink="cars">Araç Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="brands">Marka Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="colors">Renk Listesi</a></li>
+          </ul>
+      </li>
 
         <li class="nav-item">
           <a class="nav-link" routerLink="customer">Müşteriler</a>

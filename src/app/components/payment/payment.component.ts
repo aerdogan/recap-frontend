@@ -12,15 +12,15 @@ import { PaymentService } from 'src/app/services/payment.service';
 
 export class PaymentComponent implements OnInit {
   
-  paymentForm: FormGroup;
-  
-  cartTotal: number;
+  paymentForm: FormGroup
+  cartTotal: number
+  saveCard: boolean
   
   constructor(
     private formBuilder:FormBuilder, 
     private cartService:CartService,
     private paymentService:PaymentService,
-    private toastrService:ToastrService  ) { }
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createPaymentForm()
@@ -32,25 +32,24 @@ export class PaymentComponent implements OnInit {
       cartOwnerName:["",Validators.required],
       cardNumber: ["",Validators.required],
       expirationDate:["", Validators.required],
-      cardCvv:["",Validators.required]
+      cardCvv:["",Validators.required],
+      saveCard:[""]
     })
   }
 
-  payment(){
-    console.log(this.paymentForm)
+  payment(){    
     if(this.paymentForm.valid){
       let paymentModel = Object.assign({},this.paymentForm.value)
-      this.paymentService.payment(paymentModel).subscribe(
+      this.saveCard = this.paymentForm.value.saveCard
+      this.paymentService.payment(paymentModel, this.saveCard).subscribe(
         response=>{
           this.toastrService.success(response.message,"Ödeme başarılı")
         }, 
-        responseError=>
-        {
-          this.toastrService.error(responseError.error.ErrorMessage,"Ödeme hatalı")         
+        responseError=>{
+          this.toastrService.error("Hata","Ödeme hatalı")         
         }
       )
     }
-
   }
 
 }

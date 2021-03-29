@@ -3,13 +3,13 @@
 </div>
   
 <ul *ngIf="dataLoaded==true" class="list-group">
-  <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllBrandClass()">Tüm Markalar</li>
+  <li (click)="clearCurrentBrand()" routerLink="/carlist" [class]="getAllBrandClass()">Tüm Markalar</li>
   <li class="list-group-item">  
     <input type="text" class="form-control" id="markaarama" [(ngModel)]="brandFilterText" placeholder="Marka ara">
   </li>
   <li  
     *ngFor="let brand of brands | brandFilter : brandFilterText" 
-    (click)="setCurrentBrand(brand)" routerLink="cars" [queryParams]="{brandId: brand.id}" queryParamsHandling="merge"
+    (click)="setCurrentBrand(brand)" routerLink="carlist" [queryParams]="{brandId: brand.id}" queryParamsHandling="merge"
     [class]="getCurrentBrandClass(brand)"> {{ brand.name }}
   </li>
 </ul>

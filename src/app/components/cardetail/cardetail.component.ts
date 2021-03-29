@@ -35,10 +35,9 @@ export class CardetailComponent implements OnInit {
     })
   }
 
-
   getCarDetailsById(carId:number){
     this.carService.getCarDetailsById(carId).subscribe(response=>{
-      this.cardetail = response.data;
+      this.cardetail = response.data
     })
   }
 
@@ -49,18 +48,17 @@ export class CardetailComponent implements OnInit {
       }, 
       responseError=>
       {
-        this.toastrService.error("Araç kiralanamaz","Uyarı")         
+        this.toastrService.error("Bu araç kiralanamaz","Uyarı")         
       }
     );
   }
 
   getImagesByCarId(carId:number){
     this.carDetailService.getImagesByCarId(carId).subscribe(response=>{
-      this.carimages = response.data;
+      this.carimages = response.data
     })
   }
 
-  // resimleri görüntüleyen carousel de aktif araç css'ini değiştir
   getCurrentImageClass(image:CarImage){
     if(image == this.carimages[0]){
       return "carousel-item active"

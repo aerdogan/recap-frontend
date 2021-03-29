@@ -4,13 +4,13 @@
 
 <ul *ngIf="dataLoaded==true" class="list-group">
 
-  <li (click)="clearCurrentBrand()" routerLink="/cars" [class]="getAllColorClass()">Tüm Renkler</li>
+  <li (click)="clearCurrentBrand()" routerLink="/carlist" [class]="getAllColorClass()">Tüm Renkler</li>
   <li class="list-group-item">  
     <input type="text" class="form-control" id="renkarama" [(ngModel)]="colorFilterText" placeholder="Renk ara">
   </li>
   <li 
     *ngFor="let color of colors | colorFilter : colorFilterText"
-    (click)="setCurrentColor(color)" routerLink="cars" [queryParams]="{colorId: color.id}" queryParamsHandling="merge"
+    (click)="setCurrentColor(color)" routerLink="carlist" [queryParams]="{colorId: color.id}" queryParamsHandling="merge"
     [class]="getCurrentColorClass(color)"> {{ color.name }}
   </li>
 

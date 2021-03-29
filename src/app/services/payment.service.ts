@@ -15,9 +15,9 @@ export class PaymentService {
 
   constructor(private httpClient: HttpClient) { }
 
-  payment(payment:Payment):Observable<ResponseModel> {
-    let newPath = this.url + "payment";
-    return this.httpClient.post<ResponseModel>(newPath, payment); // fake true
+  payment(payment:Payment, isSaveCard:boolean):Observable<ResponseModel> {
+    let newPath = this.url + "payment"
+    return this.httpClient.post<ResponseModel>(newPath, payment) 
   }
 
 }
