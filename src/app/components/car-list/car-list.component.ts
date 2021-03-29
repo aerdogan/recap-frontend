@@ -6,24 +6,20 @@ import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-cars',
-  templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css'],
+  templateUrl: './car-list.component.html',
+  styleUrls: ['./car-list.component.css'],
 })
-export class CarsComponent implements OnInit {
+
+export class CarListComponent implements OnInit {
   carDetails: CarDetail[] = [];
 
   dataLoaded = false;
-  constructor(
-    private carService: CarService,
-    private brandService: BrandService,
-    private colorService: ColorService
-  ) {}
+  constructor( private carService: CarService ) {}
 
   ngOnInit(): void {
     this.getCarDetails();
   }
 
-  // araç detaylarını getir
   getCarDetails() {
     this.carService.getCarDetails().subscribe((response) => {
       this.carDetails = response.data;

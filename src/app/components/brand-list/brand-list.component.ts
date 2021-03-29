@@ -4,10 +4,10 @@ import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
   selector: 'app-brands',
-  templateUrl: './brands.component.html',
-  styleUrls: ['./brands.component.css']
+  templateUrl: './brand-list.component.html',
+  styleUrls: ['./brand-list.component.css']
 })
-export class BrandsComponent implements OnInit {
+export class BrandListComponent implements OnInit {
   brands : Brand[] = []
   dataLoaded = false
   constructor(private brandService: BrandService) { }

@@ -23,9 +23,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
-import { BrandsComponent } from './components/brands/brands.component';
-import { ColorsComponent } from './components/colors/colors.component';
-import { CarsComponent } from './components/cars/cars.component';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
+import { CarListComponent } from './components/car-list/car-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
@@ -53,9 +53,9 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     CarAddComponent,
     BrandAddComponent,
     ColorAddComponent,
-    BrandsComponent,
-    ColorsComponent,
-    CarsComponent,
+    BrandListComponent,
+    ColorListComponent,
+    CarListComponent,
     LoginComponent,
     BrandUpdateComponent,
     ColorUpdateComponent,

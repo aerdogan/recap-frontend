@@ -4,10 +4,10 @@ import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-colors',
-  templateUrl: './colors.component.html',
-  styleUrls: ['./colors.component.css']
+  templateUrl: './color-list.component.html',
+  styleUrls: ['./color-list.component.css']
 })
-export class ColorsComponent implements OnInit {
+export class ColorListComponent implements OnInit {
   colors : Color[] = []
   dataLoaded = false
   constructor(private colorService: ColorService) { }

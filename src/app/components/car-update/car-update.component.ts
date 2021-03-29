@@ -83,12 +83,14 @@ export class CarUpdateComponent implements OnInit {
   getCarDetailsById(carId:number) {
     this.carService.getCarDetailsById(carId).subscribe((response) => {
       this.car = response.data;
-      this.carUpdateForm.controls['colorId'].setValue(this.car.colorId)
-      this.carUpdateForm.controls['brandId'].setValue(this.car.brandId)
-      this.carUpdateForm.controls['name'].setValue(this.car.name)
-      this.carUpdateForm.controls['modelYear'].setValue(this.car.modelYear)
-      this.carUpdateForm.controls['dailyPrice'].setValue(this.car.dailyPrice)
-      this.carUpdateForm.controls['description'].setValue(this.car.description)
+      this.carUpdateForm.setValue({
+        colorId: this.car.colorId,
+        brandId: this.car.brandId,
+        name: this.car.name,
+        modelYear: this.car.modelYear,
+        dailyPrice: this.car.dailyPrice,
+        description: this.car.description
+      })
     });
   }
 

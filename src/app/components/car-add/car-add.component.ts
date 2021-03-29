@@ -19,9 +19,6 @@ export class CarAddComponent implements OnInit {
   brands: Brand[];
   colors: Color[];
 
-  selectedBrand: Brand;
-  selectedColor: Color;
-
   constructor(
     private formBuilder:FormBuilder,
     private brandService:BrandService,
