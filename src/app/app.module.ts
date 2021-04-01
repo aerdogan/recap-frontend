@@ -59,7 +59,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     LoginComponent,
     BrandUpdateComponent,
     ColorUpdateComponent,
-    CarUpdateComponent
+    CarUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 import { CartService } from 'src/app/services/cart.service';
+import { FindexService } from 'src/app/services/findex.service';
 
 @Component({
   selector: 'app-rental-add',
@@ -29,7 +30,8 @@ export class RentalAddComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private cartService : CartService
+    private cartService : CartService,
+    private findexService: FindexService
   ) {}
 
   ngOnInit(): void {
@@ -72,6 +74,14 @@ export class RentalAddComponent implements OnInit {
       rentalModel.modelYear = this.currentCar.modelYear
       rentalModel.dailyPrice = this.currentCar.dailyPrice
       rentalModel.totalPrice =  this.totalPrice
+
+      /*
+      let findexPoint = this.findexService.getPointByCustomerId(rentalModel.customerId)
+      if(findexPoint){
+        
+      }
+      */
+
       this.cartService.addToCart(rentalModel)
       this.toastrService.success("Sepete eklendi", this.currentCar.name)
     } else {

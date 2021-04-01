@@ -38,7 +38,7 @@ export class BrandUpdateComponent implements OnInit {
   }
 
   getBrandById(brandId:number){
-    this.brandService.getById(brandId).subscribe((response) => {
+    this.brandService.getById(brandId).subscribe(response => {
       this.brand = response.data;
     });
   }
