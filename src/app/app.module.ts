@@ -31,6 +31,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { CarUpdateComponent } from './components/car-update/car-update.component
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

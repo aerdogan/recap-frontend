@@ -18,8 +18,7 @@ export class PaymentComponent implements OnInit {
   paymentForm: FormGroup
   cartTotal: number
   customerId: number
-  cardId : number
-  saveCard: boolean
+  cardId : number = 0
     
   constructor(
     private formBuilder:FormBuilder, 
@@ -60,16 +59,18 @@ export class PaymentComponent implements OnInit {
   payment(){    
     if(this.paymentForm.valid){
       let paymentModel = Object.assign({},this.paymentForm.value)
-      paymentModel.CustomerId = this.customerId
-      paymentModel.Total = this.cartTotal
-      paymentModel.CardId = this.cartTotal
-      paymentModel.PaymentDate = new Date().toISOString().slice(0,10); 
-      this.paymentService.payment(paymentModel, this.saveCard).subscribe(
+      paymentModel.customerId = this.customerId
+      paymentModel.total = this.cartTotal
+      paymentModel.cardId = this.cardId
+      this.paymentService.payment(paymentModel).subscribe(
         response=>{
           this.toastrService.success(response.message,"Ödeme")
+          if(paymentModel.saveCard){
+            this.paymentService.savecard(paymentModel).subscribe()
+          }
         }, 
         responseError=>{
-          this.toastrService.error("Hata","Ödeme hatalı")         
+          this.toastrService.error("Ödeme alınamadı","Hata")         
         }
       )
     }

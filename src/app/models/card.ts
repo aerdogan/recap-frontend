@@ -1,4 +1,4 @@
-export interface Card{
+export class Card{
     id:number;
     customerId:number;
     cardOwnerName:string;

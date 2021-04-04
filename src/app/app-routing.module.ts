@@ -19,6 +19,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { LoginGuard } from './guards/login.guard';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:"", pathMatch:"full",  component:HomeComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path:"cars/:brandId", component:CarComponent},
   {path:"cars/:colorId", component:CarComponent},
   {path:"cars/:brandId/:colorId", component:CarComponent},
-  {path:"cars", component:CarComponent},  
+  {path:"cars", component:CarComponent},
 
   {path:"car/add", component:CarAddComponent, canActivate:[LoginGuard] },
   {path:"car/update/:carId", component:CarUpdateComponent, canActivate:[LoginGuard] },
@@ -54,7 +55,15 @@ const routes: Routes = [
   {path:"rental/add", component: RentalAddComponent},
   {path:"rental", component: RentalComponent},
 
-  {path:"login", component:LoginComponent}  
+  {path:"login", component:LoginComponent},
+  {path:"register", component:LoginComponent},
+
+
+
+
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: 'notfoundurl', redirectTo: '/not-found'},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({

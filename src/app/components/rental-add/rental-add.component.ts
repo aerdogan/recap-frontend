@@ -21,7 +21,7 @@ export class RentalAddComponent implements OnInit {
   currentCar: CarDetail
   rentDate: Date
   returnDate: Date
-  totalPrice:number
+  totalPrice:number = 0
   dataLoaded = false
 
   constructor(
@@ -89,7 +89,6 @@ export class RentalAddComponent implements OnInit {
     }
   }
 
-  // müşterileri getir
   getCustomerDetails() {
     this.customerService.getCustomerDetails().subscribe((response) => {
       this.customers = response.data
@@ -97,15 +96,13 @@ export class RentalAddComponent implements OnInit {
     });
   }
   
-  // kiralama toplamı
   calcTotalPrice() {
     let startDate = new Date(this.rentalAddForm.value.rentDate)
     let endDate = new Date(this.rentalAddForm.value.returnDate)
-    if( isNaN(startDate.getTime()) || isNaN(endDate.getTime()) ){ this.totalPrice = 0 } 
+    if( isNaN(startDate.getDate()) || isNaN(endDate.getDate()) ){ this.totalPrice = 0 } 
     else if ( startDate > endDate ) { this.totalPrice = 0 } 
     else {
-      let dateDiff = Math.floor((endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24)
-      this.totalPrice = dateDiff * this.currentCar.dailyPrice
+      this.totalPrice = (endDate.getDate() - startDate.getDate()) * this.currentCar.dailyPrice
     }
   }
 

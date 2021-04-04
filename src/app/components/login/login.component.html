@@ -1,4 +1,62 @@
-<body class="text-center">
+<div class="container">
+  
+  <div class="row">
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <h2>Kullanıcı girişi</h2>
+      <form id="account" method="post" novalidate="novalidate">
+        <div class="form-group">
+          <label for="Input_Email">Email</label>
+          <input
+            class="form-control"
+            type="email"
+            data-val="true"
+            data-val-email="The Email field is not a valid e-mail address."
+            data-val-required="The Email field is required."
+            id="Input_Email"
+            name="Input.Email"
+            value=""
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="Input_Password">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            data-val="true"
+            data-val-required="The Password field is required."
+            id="Input_Password"
+            name="Input.Password"
+          />
+        </div>
+
+        <div class="form-group">
+          <button id="login-submit" type="submit" class="btn btn-primary">
+            Giriş
+          </button>
+        </div>
+
+        <div class="form-group">
+          <p>
+            <a id="forgot-password" href="forgot">Şifremi unuttum</a>
+          </p>
+          <p>
+            <a routerLink="register">Kayıt Ol</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
+
+<!-- <body class="text-center">
 
     <main class="form-signin">
       <form [formGroup]="loginForm">
@@ -17,4 +75,4 @@
       </form>
     </main>
 
-</body> 
+</body>  -->

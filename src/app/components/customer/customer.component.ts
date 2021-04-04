@@ -13,9 +13,11 @@ export class CustomerComponent implements OnInit {
 
   dataLoaded = false;
   constructor(private customerService: CustomerService) { }
+  
 
   ngOnInit(): void {
     this.getCustomerDetails();
+
   }
 
   /* şimdilik kalsın refactor edilecek
