@@ -18,6 +18,7 @@ export class CartService {
   }
 
   addToCart(cartItem:CartItem){
+      // check findex point
       CartItems.push(cartItem)
       this.cartSummary.customerId = cartItem.customerId
       this.calculateCart()

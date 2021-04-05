@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -11,21 +12,26 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm:FormGroup;
+  loginForm:FormGroup
+
+  isAuth:boolean
+
   constructor(
     private formBuilder: FormBuilder, 
     private authService: AuthService,
     private storageService: StorageService,
-    private toastrService : ToastrService) { }
+    private toastrService : ToastrService,
+    private router:Router) { }
 
   ngOnInit(): void {
-    this.createLoginForm();
+    this.createLoginForm()
+    this.isAuth = this.authService.isAuthenticated()
   }
 
   createLoginForm(){
     this.loginForm = this.formBuilder.group({
-      email: [""],
-      password : [""]
+      email: ["",Validators.required],
+      password : ["", Validators.required]
     })
   }
 
@@ -35,12 +41,10 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe( response =>{
         this.toastrService.info(response.message)
         this.storageService.set("token",response.data.token)
+        this.router.navigate(['/'])
+        this.isAuth = this.authService.isAuthenticated()
       }, responseError =>{
-        if(responseError.error.Errors.length>0){
-          for (let i = 0; i <responseError.error.Errors.length; i++) {
-            this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası")
-          }       
-        } 
+        this.toastrService.error(responseError.error)
       })
     }else{
       this.toastrService.error("Form eksik","Hata")

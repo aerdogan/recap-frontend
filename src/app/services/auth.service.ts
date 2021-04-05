@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginModel, RegisterModel } from '../models/authModel';
 import { SingleResponseModel } from '../models/responseModel';
@@ -12,7 +13,6 @@ import { StorageService } from './storage.service';
 export class AuthService {
 
   private url = environment.apiUrl + "Auth/";
-
 
   constructor(
     private httpClient: HttpClient,
@@ -28,6 +28,10 @@ export class AuthService {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath, registerModel)
   }
 
+  logout(){
+    this.storageService.remove("token")
+  }
+
   isAuthenticated(){
     if( this.storageService.get("token") ){
       return true;
@@ -36,4 +40,7 @@ export class AuthService {
       return false;
     }
   }
+
+
+
 }

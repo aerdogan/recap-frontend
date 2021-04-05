@@ -5,48 +5,25 @@
     <div class="col-md-4"></div>
 
     <div class="col-md-4">
-      <h2>Kullanıcı girişi</h2>
-      <form id="account" method="post" novalidate="novalidate">
+      
+      <form id="account" method="post" class="form-signin" [formGroup]="loginForm">
+
+        <h2>Kullanıcı girişi</h2>
+
         <div class="form-group">
-          <label for="Input_Email">Email</label>
-          <input
-            class="form-control"
-            type="email"
-            data-val="true"
-            data-val-email="The Email field is not a valid e-mail address."
-            data-val-required="The Email field is required."
-            id="Input_Email"
-            name="Input.Email"
-            value=""
-          />
+          <label for="email">Email</label>
+          <input class="form-control" type="email" id="email" formControlName="email"/>
         </div>
 
         <div class="form-group">
-          <label for="Input_Password">Password</label>
-          <input
-            class="form-control"
-            type="password"
-            data-val="true"
-            data-val-required="The Password field is required."
-            id="Input_Password"
-            name="Input.Password"
-          />
+          <label for="password">Password</label>
+          <input class="form-control" type="password" id="password" formControlName="password" />
         </div>
 
         <div class="form-group">
-          <button id="login-submit" type="submit" class="btn btn-primary">
-            Giriş
-          </button>
+          <button type="submit" class="btn btn-primary" (click)="login()" > Giriş </button>
         </div>
-
-        <div class="form-group">
-          <p>
-            <a id="forgot-password" href="forgot">Şifremi unuttum</a>
-          </p>
-          <p>
-            <a routerLink="register">Kayıt Ol</a>
-          </p>
-        </div>
+        
       </form>
     </div>
 
@@ -56,23 +33,3 @@
   </div>
 </div>
 
-<!-- <body class="text-center">
-
-    <main class="form-signin">
-      <form [formGroup]="loginForm">
-        <h1 class="h3 mb-3 fw-normal">Oturum açın</h1>
-
-        <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" >
-          <label for="floatingInput">E-mail</label>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
-          <label for="floatingPassword">Şifre</label>
-        </div>
-
-        <button class="w-100 btn btn-lg btn-primary"   type="submit" (click)="login()">Giriş yap</button>
-      </form>
-    </main>
-
-</body>  -->

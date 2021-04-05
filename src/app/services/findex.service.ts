@@ -8,7 +8,8 @@ export class FindexService {
   constructor() { }
 
   getPointByCustomerId(customerId:number):number {
-    return Math.floor(Math.random() * 1900);
+    // get customer findex point
+    return 0
   }
 
 }

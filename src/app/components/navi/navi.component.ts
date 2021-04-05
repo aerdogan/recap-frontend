@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,14 +10,22 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NaviComponent implements OnInit {
 
-  user= faUserCircle
+  userIcon = faUserCircle
 
   isAuth:boolean
 
-  constructor(private authService:AuthService) { }
+  constructor(
+    private authService:AuthService,
+    private router:Router) { }
 
   ngOnInit(): void {
-    this.isAuth = this.authService.isAuthenticated();
+    this.isAuth = this.authService.isAuthenticated()
+  }
+
+  logout(){
+    this.authService.logout()
+    this.router.navigate(['/'])
+    this.isAuth = this.authService.isAuthenticated()
   }
 
 }

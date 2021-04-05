@@ -20,4 +20,9 @@ export class CarDetailService {
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
 
+  getAllImages():Observable<ListResponseModel<CarImage>> {
+    let newPath = this.url + "getlist";
+    return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
+  }
+
 }
