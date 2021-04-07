@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validator, FormBuilder, Validators,} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -19,15 +20,17 @@ export class ProfileComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private userService:UserService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
     this.createUserForm();
     this.getUserByEmail();
   }
 
-  getUserByEmail(){    
-    this.userService.getUserByEmail("test@test.com").subscribe(response=>{
+  getUserByEmail(){
+    let email = this.authService.tokenDetail?.email
+    this.userService.getUserByEmail(email).subscribe(response=>{
       this.user = response.data
       this.userForm.setValue({
         firstName: this.user.firstName,

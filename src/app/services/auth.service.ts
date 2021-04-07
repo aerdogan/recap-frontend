@@ -34,6 +34,7 @@ export class AuthService {
 
   logout(){
     this.storageService.remove("token")
+    this.tokenDetail = new TokenDetail()
   }
 
   decodeToken(token:string){
