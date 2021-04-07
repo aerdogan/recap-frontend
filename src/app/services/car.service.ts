@@ -15,19 +15,19 @@ export class CarService {
 
   constructor(private httpClient: HttpClient) { }
 
-  add(car:Car):Observable<ListResponseModel<Car>> {
+  add(car:Car):Observable<SingleResponseModel<Car>> {
     let newPath = this.url + "add";
-    return this.httpClient.post<ListResponseModel<Car>>(newPath, car);
+    return this.httpClient.post<SingleResponseModel<Car>>(newPath, car);
   }
 
-  update(car:Car):Observable<ListResponseModel<Car>> {
+  update(car:Car):Observable<SingleResponseModel<Car>> {
     let newPath = this.url + "update";
-    return this.httpClient.post<ListResponseModel<Car>>(newPath, car);
+    return this.httpClient.post<SingleResponseModel<Car>>(newPath, car);
   }
 
-  delete(car:Car):Observable<ListResponseModel<Car>> {
+  delete(car:Car):Observable<SingleResponseModel<Car>> {
     let newPath = this.url + "delete";
-    return this.httpClient.post<ListResponseModel<Car>>(newPath, car);
+    return this.httpClient.post<SingleResponseModel<Car>>(newPath, car);
   }
 
   getCarDetailsById(carId:number):Observable<SingleResponseModel<CarDetail>> {

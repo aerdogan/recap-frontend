@@ -14,9 +14,7 @@ export class HomeComponent implements OnInit {
   carDetails : CarDetail[] = [] // araç bilgileri
   carImages : CarImage[] = []  // resim bilgileri
 
-  constructor(
-    private carService: CarService,
-    private carDetailService: CarDetailService) { }
+  constructor(private carService: CarService, private carDetailService: CarDetailService) { }
 
   ngOnInit(): void {
     this.getAllCarDetails()

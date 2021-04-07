@@ -46,8 +46,7 @@ export class CardetailComponent implements OnInit {
       response=>{        
         this.isCarAvail = response
       }, 
-      responseError=>
-      {
+      responseError=>{
         this.toastrService.error("Bu araç kiralanamaz","Uyarı")         
       }
     );

@@ -26,7 +26,7 @@
         </li>
 
 
-        <li *ngIf="isAuth" class="nav-item dropdown">
+        <li *ngIf="roleIfExist('admin')" class="nav-item dropdown">
           <a  class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown">Yönetim</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
             <li><a class="dropdown-item" routerLink="carlist">Araç Listesi</a></li>
@@ -39,24 +39,20 @@
       
     </div>
 
-    <div *ngIf="!isAuth">
-      <button class="btn btn-outline-primary" routerLink="register">
-         Üye Ol
-      </button>
-   
-      <button class="btn btn-primary ms-lg-2" routerLink="login">
-        Giriş Yap
-      </button>
-   </div>
+    <div *ngIf="!isAuth()">
+      <button class="btn btn-outline-primary" routerLink="register">Kayıt Ol</button>
+      <button class="btn btn-primary ms-lg-2" routerLink="login">Giriş Yap</button>
+    </div>
 
-   <div *ngIf="isAuth">
+   <div *ngIf="isAuth()">
       <div class="btn-group">
-         <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
-            <fa-icon [icon]="userIcon" size="2x"></fa-icon>
+         <button class="btn dropdown-toggle btn-info btn-sm" data-bs-toggle="dropdown">
+            <fa-icon [icon]="userIcon" size="lg"></fa-icon>
+            Ahmet Erdoğan
          </button>
    
          <div class="dropdown-menu dropdown-menu-end">
-            <div class="dropdown-item" routerLink="/auth/profile"> Profil </div>
+            <div class="dropdown-item" routerLink="profile"> Profil </div>
             <div class="dropdown-item" (click)="logout()" > Çıkış Yap </div>
          </div>
       </div>

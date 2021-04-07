@@ -20,19 +20,19 @@ export class BrandService {
     return this.httpClient.get<ListResponseModel<Brand>>(newPath);
   }
 
-  add(brand:Brand):Observable<ListResponseModel<Brand>> {
+  add(brand:Brand):Observable<SingleResponseModel<Brand>> {
     let newPath = this.url + "add";
-    return this.httpClient.post<ListResponseModel<Brand>>(newPath, brand);
+    return this.httpClient.post<SingleResponseModel<Brand>>(newPath, brand);
   }
 
-  update(brand:Brand):Observable<ListResponseModel<Brand>> {
+  update(brand:Brand):Observable<SingleResponseModel<Brand>> {
     let newPath = this.url + "update";
-    return this.httpClient.post<ListResponseModel<Brand>>(newPath, brand);
+    return this.httpClient.post<SingleResponseModel<Brand>>(newPath, brand);
   }
 
-  delete(brand:Brand):Observable<ListResponseModel<Brand>> {
+  delete(brand:Brand):Observable<SingleResponseModel<Brand>> {
     let newPath = this.url + "delete";
-    return this.httpClient.post<ListResponseModel<Brand>>(newPath, brand);
+    return this.httpClient.post<SingleResponseModel<Brand>>(newPath, brand);
   }
 
   getById(id:number):Observable<SingleResponseModel<Brand>> {

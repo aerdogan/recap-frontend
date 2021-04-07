@@ -75,15 +75,16 @@ export class RentalAddComponent implements OnInit {
       rentalModel.dailyPrice = this.currentCar.dailyPrice
       rentalModel.totalPrice =  this.totalPrice
 
-      /*
-      let findexPoint = this.findexService.getPointByCustomerId(rentalModel.customerId)
-      if(findexPoint){
-        
+      
+      let customerPoint = this.findexService.getPointByCustomerId(rentalModel.customerId)
+      let carPoint = this.findexService.getPointByCarId(rentalModel.carId)
+      if(customerPoint >= carPoint){
+        this.cartService.addToCart(rentalModel)
+        this.toastrService.success("Sepete eklendi", this.currentCar.name)
+      } else {
+        this.toastrService.error('Findex puanınız yetersiz', 'Hata')
       }
-      */
 
-      this.cartService.addToCart(rentalModel)
-      this.toastrService.success("Sepete eklendi", this.currentCar.name)
     } else {
       this.toastrService.error('Formunuz eksik', 'Hata')
     }

@@ -22,4 +22,8 @@ export class ColorListComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+
+  deleteColor(color:Color){
+    this.colorService.delete(color).subscribe();    
+  }
 }

@@ -16,7 +16,7 @@
           <td>{{ color.name }}</td>
           <td class="operations">
             <button class="btn btn-info" routerLink="/color/update/{{ color.id }}" >Güncelle</button>
-            <button class="btn btn-primary" routerLink="/color/delete" >Sil</button>
+            <button class="btn btn-primary" (click)="deleteColor(color)" >Sil</button>
           </td>
         </tr>
       </tbody>

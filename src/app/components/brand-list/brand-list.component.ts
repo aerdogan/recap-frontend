@@ -22,5 +22,9 @@ export class BrandListComponent implements OnInit {
       this.dataLoaded = true
     });
   }
+
+  deleteBrand(brand:Brand){
+    this.brandService.delete(brand).subscribe();    
+  }
  
 }

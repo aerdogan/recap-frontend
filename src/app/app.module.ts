@@ -32,7 +32,9 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -62,7 +64,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BrandUpdateComponent,
     ColorUpdateComponent,
     CarUpdateComponent,
-    PageNotFoundComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    JwtModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

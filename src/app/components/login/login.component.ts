@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TokenDetail } from 'src/app/models/tokenModel';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -14,8 +15,6 @@ export class LoginComponent implements OnInit {
 
   loginForm:FormGroup
 
-  isAuth:boolean
-
   constructor(
     private formBuilder: FormBuilder, 
     private authService: AuthService,
@@ -25,7 +24,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.createLoginForm()
-    this.isAuth = this.authService.isAuthenticated()
   }
 
   createLoginForm(){
@@ -40,9 +38,9 @@ export class LoginComponent implements OnInit {
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe( response =>{
         this.toastrService.info(response.message)
-        this.storageService.set("token",response.data.token)
+        this.storageService.set("token",response.data.token) 
+        this.authService.decodeToken(response.data.token)    
         this.router.navigate(['/'])
-        this.isAuth = this.authService.isAuthenticated()
       }, responseError =>{
         this.toastrService.error(responseError.error)
       })

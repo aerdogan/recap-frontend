@@ -1,17 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginModel, RegisterModel } from '../models/authModel';
 import { SingleResponseModel } from '../models/responseModel';
-import { TokenModel } from '../models/tokenModel';
+import { TokenDetail, TokenModel } from '../models/tokenModel';
 import { StorageService } from './storage.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  tokenDetail = new TokenDetail()
+  
   private url = environment.apiUrl + "Auth/";
 
   constructor(
@@ -32,15 +36,23 @@ export class AuthService {
     this.storageService.remove("token")
   }
 
+  decodeToken(token:string){
+    let helper = new JwtHelperService()    
+    let data = helper.decodeToken(token)    
+    this.tokenDetail.email = data.email
+    this.tokenDetail.username = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']
+    this.tokenDetail.claims = data['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+  }
+
   isAuthenticated(){
-    if( this.storageService.get("token") ){
+    let token = this.storageService.get("token")
+    if( token ){
+      this.decodeToken(token)
       return true;
     }
     else{
       return false;
     }
   }
-
-
 
 }

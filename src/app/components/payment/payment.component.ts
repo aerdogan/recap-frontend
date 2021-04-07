@@ -2,8 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Card } from 'src/app/models/card';
+import { CartItem } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart.service';
 import { PaymentService } from 'src/app/services/payment.service';
+import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +15,8 @@ import { PaymentService } from 'src/app/services/payment.service';
 
 export class PaymentComponent implements OnInit {
   
-  cards:Card[]=[];
+  cards:Card[]=[]
+  cartItems : CartItem[]=[]
   dataLoaded = false
   paymentForm: FormGroup
   cartTotal: number
@@ -24,6 +27,7 @@ export class PaymentComponent implements OnInit {
     private formBuilder:FormBuilder, 
     private cartService:CartService,
     private paymentService:PaymentService,
+    private rentalService:RentalService,
     private toastrService:ToastrService) { }
 
   ngOnInit(): void {
@@ -31,6 +35,9 @@ export class PaymentComponent implements OnInit {
       this.cartTotal = response.cartTotal,
       this.customerId = response.customerId
     })
+
+    this.cartItems = this.cartService.cartList()
+
     this.createPaymentForm()   
     this.getCardList() 
   }
@@ -64,10 +71,17 @@ export class PaymentComponent implements OnInit {
       paymentModel.cardId = this.cardId
       this.paymentService.payment(paymentModel).subscribe(
         response=>{
-          this.toastrService.success(response.message,"Ödeme")
+
           if(paymentModel.saveCard){
             this.paymentService.savecard(paymentModel).subscribe()
           }
+
+          this.cartItems.map(rent => {
+            rent.returnDate = undefined
+            this.rentalService.add(rent).subscribe() // istenirse buradaki mesajlarda gösterilebilir
+          });
+
+          this.toastrService.success(response.message,"Ödeme")          
         }, 
         responseError=>{
           this.toastrService.error("Ödeme alınamadı","Hata")         

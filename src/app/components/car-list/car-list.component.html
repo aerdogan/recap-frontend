@@ -24,7 +24,7 @@
           <td>{{ car.dailyPrice }} TL</td>
           <td class="operations">
             <button class="btn btn-info" routerLink="/car/update/{{ car.id }}" >Güncelle</button>
-            <button class="btn btn-primary" routerLink="/car/delete" >Sil</button>
+            <button class="btn btn-primary" (click)="deleteCar(car)" >Sil</button>
           </td>
         </tr>
       </tbody>
