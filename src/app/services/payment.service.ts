@@ -28,13 +28,7 @@ export class PaymentService {
 
   savecard(payment:Payment):Observable<ResponseModel> { 
     let cardPath = this.url + "savecard"
-    var card = new Card;
-    card.customerId = payment.customerId;
-    card.cardOwnerName = payment.cardOwnerName
-    card.cardNumber = payment.cardNumber;
-    card.cardExpirationDate = payment.cardExpirationDate
-    card.cardCvv = payment.cardCvv;
-    return this.httpClient.post<ResponseModel>(cardPath, card)       
+    return this.httpClient.post<ResponseModel>(cardPath, payment)       
   }
 
 }

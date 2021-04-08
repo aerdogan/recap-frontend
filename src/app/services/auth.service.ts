@@ -51,9 +51,7 @@ export class AuthService {
       this.decodeToken(token)
       return true;
     }
-    else{
-      return false;
-    }
+    return false;    
   }
 
 }

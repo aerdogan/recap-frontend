@@ -49,7 +49,7 @@ const routes: Routes = [
   {path:"cart", component:CartComponent},
 
   {path:"payment/:saveCard", component:PaymentComponent},
-  {path:"payment", component:PaymentComponent},
+  {path:"payment", component:PaymentComponent, canActivate:[LoginGuard]},
     
   {path:"rental/add/:carId", component: RentalAddComponent},
   {path:"rental/add", component: RentalAddComponent},
