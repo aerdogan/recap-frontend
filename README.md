@@ -19,7 +19,7 @@
 
 
 <strong>Sepet Kontrolü</strong>
-![image](https://user-images.githubusercontent.com/193318/114263954-df26e100-99f0-11eb-9b72-018f72db7204.png)
+![image](https://user-images.githubusercontent.com/193318/114264706-1d260400-99f5-11eb-9e9a-e548f31bf84f.png)
 
 
 
