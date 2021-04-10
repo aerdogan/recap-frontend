@@ -13,6 +13,11 @@
 
 
 
+<strong>Findex puan kontrolü</strong>
+![image](https://user-images.githubusercontent.com/193318/114264226-5f9a1180-99f2-11eb-9730-684da042b7d7.png)
+
+
+
 <strong>Sepet Kontrolü</strong>
 ![image](https://user-images.githubusercontent.com/193318/114263954-df26e100-99f0-11eb-9b72-018f72db7204.png)
 
