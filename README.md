@@ -1,5 +1,5 @@
 <strong>Ana Sayfa</strong>
-![image](https://user-images.githubusercontent.com/193318/114263809-57d96d80-99f0-11eb-8753-49f9ebd4fe7d.png)
+![image](https://user-images.githubusercontent.com/193318/114273700-d56aa100-9a23-11eb-9044-fbc06828d1f4.png)
 
 
 
