@@ -1,6 +1,6 @@
 <div class="content">
     <div class="row">
-        <div *ngFor="let car of carDetails" class="card home-card">
+        <div *ngFor="let car of carDetails" class="card home-card" HomeCardColor>
             <img src="{{ getCarImage(car.id) }}" class="rounded mx-auto d-block w-100" alt="" />
             <div class="card-body">
               <h5 class="card-title">{{ car.name }}</h5>

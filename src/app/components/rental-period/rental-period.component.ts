@@ -26,8 +26,7 @@ export class RentalPeriodComponent implements OnInit, ControlValueAccessor {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   increase() {
     if (typeof this.max === 'undefined') {

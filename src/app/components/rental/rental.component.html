@@ -23,7 +23,7 @@
           <td>{{ rental.modelYear }}</td>
           <td>{{ rental.colorName }}</td>
           <td>{{ rental.dailyPrice }} TL</td>
-          <td>{{ rental.rentDate  | date : 'dd-MM-YYYY' }}</td>  
+          <td>{{ rental.rentDate  | date : 'dd.MM.yyyy' }}</td>  
           <td>{{(rental.returnDate == null) ? "Araç Kirada": rental.returnDate | date:'dd-MM-YYYY'}}</td>
         </tr>
       </tbody>

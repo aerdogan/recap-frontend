@@ -3,6 +3,7 @@ import { CarDetail } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carimage';
 import { CarService } from 'src/app/services/car.service';
 import { CarDetailService } from 'src/app/services/cardetail.service';
+import { HomeCardColorDirective } from 'src/app/directives/home-card-color.directive'
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,6 @@ import { CarDetailService } from 'src/app/services/cardetail.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   carDetails : CarDetail[] = [] // araç bilgileri
   carImages : CarImage[] = []  // resim bilgileri
 
