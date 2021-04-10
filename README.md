@@ -9,7 +9,7 @@
 
 
 <strong>Kiralama Bilgi Girişi</strong>
-![image](https://user-images.githubusercontent.com/193318/114263913-b56dba00-99f0-11eb-93fc-f3a3d2779e99.png)
+![image](https://user-images.githubusercontent.com/193318/114271948-a13fb200-9a1c-11eb-96c6-73b04bbc1ef6.png)
 
 
 
