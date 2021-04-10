@@ -9,7 +9,7 @@ import { ListResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 
-export class CarDetailService {
+export class CarImageService {
 
   private url = environment.apiUrl + "CarImages/";
 
@@ -24,5 +24,5 @@ export class CarDetailService {
     let newPath = this.url + "getlist";
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
-
+  
 }

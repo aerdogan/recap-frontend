@@ -1,32 +1,46 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-danger d-flex mx-auto" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-danger d-flex mx-auto"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
 
-  <h5><p class="font-weight-bold">Araç Listesi</p></h5>
+<h5><p class="font-weight-bold">Araç Listesi</p></h5>
 
-  <table *ngIf="dataLoaded==true" class="table table-bordered table-condensed table-hover">
-      <thead class="thead-dark">
-        <tr>
-            <th scope="col">Model</th>            
-            <th scope="col">İsim</th>
-            <th scope="col">Renk</th>
-            <th scope="col">Model</th>
-            <th scope="col">Fiyat</th>
-          <th scope="col">İşlemler</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let car of carDetails">
-          <td>{{ car.brandName }}</td>          
-          <td>{{ car.name }}</td>
-          <td>{{ car.colorName }}</td>
-          <td>{{ car.modelYear }}</td>
-          <td>{{ car.dailyPrice }} TL</td>
-          <td class="operations">
-            <button class="btn btn-info" routerLink="/car/update/{{ car.id }}" >Güncelle</button>
-            <button class="btn btn-primary" (click)="deleteCar(car)" >Sil</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button class="btn btn-success" routerLink="/car/add" >Araç Ekle</button>
+<table
+  *ngIf="dataLoaded == true"
+  class="table table-bordered table-condensed table-hover"
+>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Model</th>
+      <th scope="col">İsim</th>
+      <th scope="col">Renk</th>
+      <th scope="col">Model</th>
+      <th scope="col">Fiyat</th>
+      <th scope="col">İşlemler</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of carDetails">
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.name }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ car.modelYear }}</td>
+      <td>{{ car.dailyPrice }} TL</td>
+      <td class="operations">
+        <button class="btn btn-warning" routerLink="/carimage/{{ car.id }}">
+          <fa-icon [icon]="iconImage" size="lg"></fa-icon>
+        </button>
+        <button class="btn btn-info" routerLink="/car/update/{{ car.id }}">
+          <fa-icon [icon]="iconPen" size="lg"></fa-icon>
+        </button>
+        <button class="btn btn-primary" (click)="deleteCar(car)">
+          <fa-icon [icon]="iconTrash" size="lg"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-success" routerLink="/car/add">Araç Ekle</button>

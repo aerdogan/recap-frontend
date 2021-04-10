@@ -37,6 +37,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './components/register/register.component';
 import { RentalPeriodComponent } from './components/rental-period/rental-period.component';
 import { HomeCardColorDirective } from './directives/home-card-color.directive';
+import { CarimageComponent } from './components/carimage/carimage.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { HomeCardColorDirective } from './directives/home-card-color.directive';
     ProfileComponent,
     RegisterComponent,
     RentalPeriodComponent,
-    HomeCardColorDirective
+    HomeCardColorDirective,
+    CarimageComponent
   ],
   imports: [
     BrowserModule,

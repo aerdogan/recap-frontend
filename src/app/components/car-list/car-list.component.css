@@ -1,8 +1,8 @@
 td.operations {
-    text-align: center;
-    width: 174px;
+  text-align: right;
+  width: 190px;
 }
 
 button {
-    margin-right: 14px;
+  margin-right: 10px;
 }

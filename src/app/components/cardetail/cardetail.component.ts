@@ -4,8 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carimage';
 import { CarService } from 'src/app/services/car.service';
-import { CarDetailService } from 'src/app/services/cardetail.service';
+import { CarImageService } from 'src/app/services/carimage.service';
 import { RentalService } from 'src/app/services/rental.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cardetail',
@@ -16,11 +17,12 @@ import { RentalService } from 'src/app/services/rental.service';
 export class CardetailComponent implements OnInit {
   cardetail : CarDetail
   carimages : CarImage[] = []
+  imageRoot = environment.imagePath
   isCarAvail: boolean
 
   constructor( 
     private carService: CarService, 
-    private carDetailService: CarDetailService,
+    private carImageService: CarImageService,
     private rentalService: RentalService,  
     private activatedRoute: ActivatedRoute,
     private toastrService:ToastrService) {}
@@ -53,7 +55,7 @@ export class CardetailComponent implements OnInit {
   }
 
   getImagesByCarId(carId:number){
-    this.carDetailService.getImagesByCarId(carId).subscribe(response=>{
+    this.carImageService.getImagesByCarId(carId).subscribe(response=>{
       this.carimages = response.data
     })
   }

@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div><h5 class="title font-weight-bold">Araç Resimleri </h5></div>
+
+  <div class="row text-center text-lg-left">
+    <div class="col-lg-3 col-md-4 col-6" *ngFor="let carimage of carImages">
+      
+      <img class="img-fluid img-thumbnail" src="{{ imageRoot + carimage.imagePath }}" alt="">
+
+      <button class="btn btn-primary btn-sm delete">
+        <fa-icon [icon]="iconTrash"></fa-icon>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-6">
+
+      <form>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="imageFile">
+          <label class="custom-file-label" for="imageFile">Choose file</label>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="col-4">
+      <button class="btn btn-success" >Resim Ekle</button>
+    </div>
+  </div>
+
+</div>

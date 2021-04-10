@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-brands',
   templateUrl: './brand-list.component.html',
-  styleUrls: ['./brand-list.component.css']
+  styleUrls: ['./brand-list.component.css'],
 })
 export class BrandListComponent implements OnInit {
-  brands : Brand[] = []
-  dataLoaded = false
-  constructor(private brandService: BrandService) { }
+  iconPen = faPen;
+  iconTrash = faTrash;
+
+  brands: Brand[] = [];
+  dataLoaded = false;
+  constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {
     this.getBrands();
@@ -18,13 +22,12 @@ export class BrandListComponent implements OnInit {
 
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
-      this.brands = response.data
-      this.dataLoaded = true
+      this.brands = response.data;
+      this.dataLoaded = true;
     });
   }
 
-  deleteBrand(brand:Brand){
-    this.brandService.delete(brand).subscribe();    
+  deleteBrand(brand: Brand) {
+    this.brandService.delete(brand).subscribe();
   }
- 
 }

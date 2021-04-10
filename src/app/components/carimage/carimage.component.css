@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.delete {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+}
+
+.row {
+    margin-bottom: 20px;
+}

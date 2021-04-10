@@ -9,7 +9,7 @@
 
       <div class="carousel-inner">
         <div *ngFor="let car of carimages" [class]="getCurrentImageClass(car)" data-bs-interval="2000" >
-          <img src="https://localhost:44384/images/{{ car.imagePath }}" class="rounded mx-auto d-block w-100" alt="{{ car.imagePath }}" />
+          <img src="{{ imageRoot + car.imagePath }}" class="rounded mx-auto d-block w-100" alt="{{ car.imagePath }}" />
         </div>
       </div>
 

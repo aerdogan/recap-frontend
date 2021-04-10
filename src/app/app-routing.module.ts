@@ -21,6 +21,7 @@ import { RentalComponent } from './components/rental/rental.component';
 import { LoginGuard } from './guards/login.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CarimageComponent } from './components/carimage/carimage.component';
 
 const routes: Routes = [
   {path:"", pathMatch:"full",  component:HomeComponent},
@@ -41,6 +42,8 @@ const routes: Routes = [
   {path:"color/add", component:ColorAddComponent , canActivate:[LoginGuard]},
   {path:"color/update/:colorId", component:ColorUpdateComponent , canActivate:[LoginGuard]},
   {path:"colorlist", component:ColorListComponent, canActivate:[LoginGuard]},
+  
+  {path:"carimage/:carId", component:CarimageComponent, canActivate:[LoginGuard]},
 
   {path:"cardetail/:carId", component:CardetailComponent},    
   {path:"cardetail", component:CardetailComponent},
