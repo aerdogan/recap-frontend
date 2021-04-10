@@ -1,0 +1,9 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="input-group-text" (click)="decrease()">-</button>
+    </div>
+    <input type="number" readonly id="numberOfDate" class="form-control" [value]="value">
+    <div class="input-group-append">
+      <button class="input-group-text" (click)="increase()">+</button>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { TokenDetail } from 'src/app/models/tokenModel';
 import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-navi',
@@ -15,6 +16,7 @@ export class NaviComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
+    private cartService:CartService,
     private router:Router) { }
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class NaviComponent implements OnInit {
 
   isAuth(){
     return this.authService.isAuthenticated()
+  }
+
+  cartCount(){
+    return this.cartService.cartList().length
   }
 
 }

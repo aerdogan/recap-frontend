@@ -35,6 +35,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfileComponent } from './components/profile/profile.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './components/register/register.component';
+import { RentalPeriodComponent } from './components/rental-period/rental-period.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { RegisterComponent } from './components/register/register.component';
     ColorUpdateComponent,
     CarUpdateComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    RentalPeriodComponent
   ],
   imports: [
     BrowserModule,

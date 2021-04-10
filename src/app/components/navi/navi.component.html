@@ -22,6 +22,7 @@
           <a class="nav-link" routerLink="rental">Kira Listesi</a>
         </li>
         <li class="nav-item">
+          <span *ngIf="cartCount()" class="badge badge-pill badge-primary"> {{ cartCount() }} </span>
           <a class="nav-link" routerLink="cart">Sepet</a>
         </li>
 

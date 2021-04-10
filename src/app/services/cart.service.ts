@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { CartSummary } from '../models/card';
+import { BehaviorSubject } from 'rxjs';
+import { CartSummary } from '../models/cart';
 import { CartItem, CartItems } from '../models/cart';
 
 @Injectable({
@@ -13,12 +13,9 @@ export class CartService {
   private dataSource = new BehaviorSubject<CartSummary>(this.cartSummary);
   data = this.dataSource.asObservable()
   
-  constructor() { 
-    
-  }
+  constructor() { }
 
   addToCart(cartItem:CartItem){
-      // check findex point
       CartItems.push(cartItem)
       this.cartSummary.customerId = cartItem.customerId
       this.calculateCart()
@@ -38,6 +35,10 @@ export class CartService {
 
   cartList():CartItem[]{
     return CartItems
+  }
+
+  clearCart(){
+    CartItems.splice(0, CartItems.length)
   }
 
 }

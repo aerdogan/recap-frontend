@@ -3,7 +3,7 @@ export interface Rental{
     carId:number;
     customerId:number;
     rentDate:Date;
-    returnDate:Date;
+    returnDate?:Date;
 }
 
 export interface RentalDetail extends Rental{

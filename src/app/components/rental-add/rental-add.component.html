@@ -23,16 +23,15 @@
           <div class="mb-3">
             <label for="rentDate">Kiralama tarihi</label>
             <div class="form-group">
-              <input type="date" id="rentDate" class="form-control" (change)="calcTotalPrice()"
+              <input type="date" id="rentDate" class="form-control"
               formControlName="rentDate"  min="{{ rentDate | date:'yyyy-MM-dd' }}" />
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="returnDate">Teslim tarihi</label>
             <div class="form-group">
-              <input type="date" id="returnDate" class="form-control" (change)="calcTotalPrice()"
-              formControlName="returnDate" min="{{ returnDate | date:'yyyy-MM-dd' }}" />
+              <label for="numberOfDate">Kiralama süresi (gün)</label>
+              <app-rental-period formControlName="numberOfDate"></app-rental-period>
             </div>
           </div>
 

@@ -6,8 +6,3 @@ export class Card{
     cardExpirationDate:string;
     cardCvv:number;
 }
-
-export class CartSummary {
-    customerId:number;
-    cartTotal:number;
-}

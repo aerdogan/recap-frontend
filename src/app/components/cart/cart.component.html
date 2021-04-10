@@ -1,8 +1,4 @@
-<div
-  *ngIf="dataLoaded == false"
-  class="spinner-border text-danger d-flex mx-auto"
-  role="status"
->
+<div *ngIf="dataLoaded == false" class="spinner-border text-danger d-flex mx-auto" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 
@@ -16,7 +12,7 @@
       <th>Renk</th>
       <th>Günlük Fiyat</th>
       <th>Kira Tarihi</th>
-      <th>Teslim Tarihi</th>
+      <th>Kira Süresi</th>
       <th>Toplam</th>
       <th></th>
     </tr>
@@ -28,7 +24,7 @@
       <td>{{ cart.colorName }}</td>
       <td class="text-right">{{ cart.dailyPrice }} TL</td>
       <td>{{ cart.rentDate | date: "dd.MM.YYYY" }}</td>
-      <td>{{ cart.returnDate | date: "dd.MM.YYYY" }}</td>
+      <td>{{ cart.numberOfDate }} Gün</td>
       <td class="text-right">{{ cart.totalPrice }} TL</td>
       <td class="text-center">
         <button type="button" (click)="removeFromCart(cart)" class="btn btn-primary">

@@ -4,3 +4,8 @@
 .navbar{
     margin-bottom: 15px;
 }
+
+.badge{
+    float:right;
+    margin-bottom:-10px;
+}

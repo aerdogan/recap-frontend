@@ -35,9 +35,7 @@ export class PaymentComponent implements OnInit {
       this.cartTotal = response.cartTotal,
       this.customerId = response.customerId
     })
-
     this.cartItems = this.cartService.cartList()
-
     this.createPaymentForm()   
     this.getCardList() 
   }
@@ -77,11 +75,11 @@ export class PaymentComponent implements OnInit {
           }
 
           this.cartItems.map(rent => {
-            rent.returnDate = undefined
-            this.rentalService.add(rent).subscribe() // istenirse buradaki mesajlarda gösterilebilir
+            this.rentalService.add(rent).subscribe() 
           });
 
-          this.toastrService.success(response.message,"Ödeme")          
+          this.toastrService.success(response.message,"Ödeme")
+          this.cartService.clearCart()       
         }, 
         responseError=>{
           this.toastrService.error("Ödeme alınamadı","Hata")         
