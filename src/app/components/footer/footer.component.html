@@ -1,0 +1,81 @@
+<footer class="row mt-5 mb-5">
+    <hr />
+    <div class="container-fluid">
+        <section class="footer-top pt-5 ">
+            <div class="container px-5 ">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-about">
+                            <h4 class="fw-normal">Rent A Car Project</h4>
+                            <p>Sosyal Mesafe, Temizlik, Maske</p>
+                            <a routerLink="/" class="btn btn-primary mb-4 mb-md-auto">
+                  Araçlarımız
+                  <i class="bi-arrow-right"></i>
+                </a>
+                        </div>
+                    </div>
+                    <div class="offset-md-1 col-md-3">
+                        <div class="footer-nav">
+                            <h4 class="fw-normal">Site İçi Ulaşım</h4>
+                            <ul>
+                                <li><a routerLink="/">Anasayfa</a></li>
+                                <li><a routerLink="/cars">Araçlar</a></li>
+                                <li><a [routerLink]="['/cardetail']" [queryParams]="{carId: 1}">Araç Detay</a></li>
+                                <li><a routerLink="/login">Login</a></li>
+                                <li><a routerLink="/register">Register</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-info">
+                            <h4 class="fw-normal">Bilgi / İletişim</h4>
+                            <ul>
+                                <li>
+                                    <b><i class="bi-telephone-fill me-2"></i>Telefon: </b>
+                                    <a href="tel://+9005550000000">0 555 000 00 00</a>
+                                </li>
+                                <li>
+                                    <b><i class=" me-2"></i>Github: </b>
+                                    <a href="https://github.com/aerdogan" target="_blank">github.com/aerdogan
+                    </a>
+                                </li>
+                                <li>
+                                    <b><i class=" me-2"></i>Back-End: </b>
+                                    <a href="https://github.com/aerdogan/dotnet/tree/main/ReCapProject" target="_blank">ReCapProject-Back-End
+                    </a>
+                                </li>
+                                <li>
+                                    <b><i class=" me-2"></i>Front-End: </b>
+                                    <a href="https://github.com/aerdogan/recap-frontend" target="_blank">ReCapProject-Front-End
+                    </a>
+                                </li>
+                                <li>
+                                    <b><i class=" me-2"></i>Discord: </b>
+                                    <a href="https://discord.com/channels/Ahmet Erdoğan#8053" target="_blank">Ahmet Erdoğan
+                   </a>
+                                </li>
+                                <li>
+                                    <b><i class=" me-2"></i>Linkedin: </b>
+                                    <a href="https://www.linkedin.com/in/" target="_blank">Ahmet Erdoğan
+                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="footer-bottom mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-copyright">
+                                License : MIT | Ahmet ERDOĞAN
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</footer>
