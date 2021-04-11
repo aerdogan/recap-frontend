@@ -108,7 +108,7 @@ LocalStorage Service</br>
 <br/>
 <br/>
 <br/>
-<h4><strong>Kullanıcı Profil Bölümü (Kullanıcı, Admin)</strong></h4>
+<h4>Kullanıcı Profil Bölümü (Kullanıcı, Admin)</h4>
 <br/>
 ![image](https://user-images.githubusercontent.com/193318/114264106-acc9b380-99f1-11eb-908c-e0b0d1c68bd6.png)
 <br/>
