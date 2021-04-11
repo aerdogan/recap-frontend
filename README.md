@@ -14,7 +14,7 @@
 
 
 <strong>Findex puan kontrolü</strong>
-![image](https://user-images.githubusercontent.com/193318/114264226-5f9a1180-99f2-11eb-9730-684da042b7d7.png)
+![image](https://user-images.githubusercontent.com/193318/114285781-6fe9d500-9a62-11eb-8368-f7b9a4322ac2.png)
 
 
 
