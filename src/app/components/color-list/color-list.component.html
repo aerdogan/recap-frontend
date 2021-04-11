@@ -1,35 +1,30 @@
-<div
-  *ngIf="dataLoaded == false"
-  class="spinner-border text-danger d-flex mx-auto"
-  role="status"
->
-  <span class="visually-hidden">Loading...</span>
+<div *ngIf="dataLoaded == false" class="spinner-border text-danger d-flex mx-auto" role="status">
+    <span class="visually-hidden">Loading...</span>
 </div>
 
-<h5><p class="font-weight-bold">Renk Listesi</p></h5>
+<h5>
+    <p class="font-weight-bold">Renk Listesi</p>
+</h5>
 
-<table
-  *ngIf="dataLoaded == true"
-  class="table table-bordered table-condensed table-hover"
->
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Renk</th>
-      <th scope="col">İşlemler</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let color of colors">
-      <td>{{ color.name }}</td>
-      <td class="operations">
-        <button class="btn btn-info" routerLink="/color/update/{{ color.id }}">
-          <fa-icon [icon]="iconPen" size="lg"></fa-icon>
+<table *ngIf="dataLoaded == true" class="table table-bordered table-condensed table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Renk</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let color of colors">
+            <td>{{ color.name }}</td>
+            <td class="operations">
+                <button class="btn btn-info btn-sm" routerLink="/color/update/{{ color.id }}">
+          <fa-icon [icon]="iconPen" size="sm"></fa-icon>
         </button>
-        <button class="btn btn-primary" (click)="deleteColor(color)">
-          <fa-icon [icon]="iconTrash" size="lg"></fa-icon>
+                <button class="btn btn-primary btn-sm" (click)="deleteColor(color)">
+          <fa-icon [icon]="iconTrash" size="sm"></fa-icon>
         </button>
-      </td>
-    </tr>
-  </tbody>
+            </td>
+        </tr>
+    </tbody>
 </table>
 <button class="btn btn-success" routerLink="/color/add">Renk Ekle</button>

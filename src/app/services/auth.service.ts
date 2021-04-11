@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LoginModel, RegisterModel } from '../models/authModel';
 import { SingleResponseModel } from '../models/responseModel';
 import { TokenDetail, TokenModel } from '../models/tokenModel';
 import { StorageService } from './storage.service';
-
 
 @Injectable({
   providedIn: 'root'
