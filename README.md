@@ -9,22 +9,22 @@
 <br/>
 <br/>
 <strong>Kiralama Bilgi Girişi</strong>
-https://user-images.githubusercontent.com/193318/114271948-a13fb200-9a1c-11eb-96c6-73b04bbc1ef6.png
+![image](https://user-images.githubusercontent.com/193318/114271948-a13fb200-9a1c-11eb-96c6-73b04bbc1ef6.png)
 <br/>
 <br/>
 <br/>
 <strong>Findex puan kontrolü</strong>
-https://user-images.githubusercontent.com/193318/114285781-6fe9d500-9a62-11eb-8368-f7b9a4322ac2.png
+![image](https://user-images.githubusercontent.com/193318/114285781-6fe9d500-9a62-11eb-8368-f7b9a4322ac2.png)
 <br/>
 <br/>
 <br/>
 <strong>Sepet Kontrolü</strong>
-https://user-images.githubusercontent.com/193318/114264706-1d260400-99f5-11eb-9e9a-e548f31bf84f.png
+![image](https://user-images.githubusercontent.com/193318/114264706-1d260400-99f5-11eb-9e9a-e548f31bf84f.png)
 <br/>
 <br/>
 <br/>
 <strong>Tahsilat Modülü</strong>
-https://user-images.githubusercontent.com/193318/114264004-14333380-99f1-11eb-8f94-612b342c7cdb.png
+![image](https://user-images.githubusercontent.com/193318/114264004-14333380-99f1-11eb-8f94-612b342c7cdb.png)
 <br/>
 <br/>
 <br/>
@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/193318/114264004-14333380-99f1-11eb-8f
 <br/>
 <br/>
 <strong>Kullanıcı Profil Bölümü (Kullanıcı, Admin)</strong>
-https://user-images.githubusercontent.com/193318/114264106-acc9b380-99f1-11eb-908c-e0b0d1c68bd6.png
+![image](https://user-images.githubusercontent.com/193318/114264106-acc9b380-99f1-11eb-908c-e0b0d1c68bd6.png)
 <br/>
 <br/>
 <br/>
