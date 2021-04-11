@@ -1,3 +1,52 @@
+<h4>Araç Kiralama Uygulaması(Front-End)</h4>
+
+<h3>Özellikler :</h3>
+
+• Kullanıcılar kayıt olabilir ve oturum açabilirler
+• Araç listesini ve detaylarını görebilirler
+• Marka ve Renk seçeneklerine göre arama yapabilirler
+• Müsait araçları kiralama yapabilirler
+• Yönetici olarak giriş yapabilir, araçları, renkleri, 
+markaları ve araç resimlerini yönetebilirler
+• Kiralanan araca findex puanı yeterli ise kredi kartı ile ödeme yapabilirler
+• Kredi kartlarını kayıt edip daha sonra kolayca ulaşabilirler
+• Kiradaki bir aracı teslim alabilirler
+• Kiralanan araç listesini ve geçmişini listeleyebilirler
+
+
+<strong>Kullanılan Teknolojiler (Backend)</strong>
+Asp.Net Core 3.1
+Katmanlı Mimari (NTier)
+Design Patterns
+Autofac (IoC)
+FluentValidation
+Log4Net
+JWT Bearer
+Entity Framework
+Json WebApi
+AOP Teknikleri (Caching, Validation, Performance, Transaction)
+Swagger Web Api UI
+
+
+<strong>Kullanılan Teknolojiler (Frontend)</strong>
+<strong>Paketler</strong>
+Angular 11.2.5
+Angular CLI 11.2.4
+Bootstrap 5.0.0-beta2
+JQuery 3.6.0
+Toastr 2.1.4
+@auth0/angular-jwt (Decode Token) 5.0.2
+bootswatch 4.6.0
+font-awesome 4.7.0
+
+<strong>Teknikler</strong>
+Custom Form Control
+Custom Pipe
+Custom Directive
+QueryParams
+Guards
+LocalStorage Service
+
 <strong>Ana Sayfa</strong>
 ![image](https://user-images.githubusercontent.com/193318/114316808-d8da5700-9b0d-11eb-844b-5dbf26f9cf2b.png)
 <br/>
