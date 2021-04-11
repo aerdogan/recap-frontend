@@ -13,7 +13,9 @@
 • Kiralanan araç listesini ve geçmişini listeleyebilirler</br>
 </br>
 </br>
-<strong>Kullanılan Teknolojiler (Backend)</strong></br>
+<strong>Kullanılan Teknolojiler (Backend)</strong>
+</br>
+
 Asp.Net Core 3.1</br>
 Katmanlı Mimari (NTier)</br>
 Design Patterns</br>
@@ -27,7 +29,9 @@ AOP Teknikleri (Caching, Validation, Performance, Transaction)</br>
 Swagger Web Api UI</br>
 </br>
 </br>
-<strong>Kullanılan Teknolojiler (Frontend)</strong></br>
+<strong>Kullanılan Teknolojiler (Frontend)</strong>
+</br>
+
 <strong>Paketler</strong></br>
 Angular 11.2.5</br>
 Angular CLI 11.2.4</br>
@@ -38,7 +42,9 @@ Toastr 2.1.4</br>
 bootswatch 4.6.0</br>
 font-awesome 4.7.0</br>
 </br>
-<strong>Teknikler</strong></br>
+<strong>Teknikler</strong>
+</br>
+
 Custom Form Control</br>
 Custom Pipe</br>
 Custom Directive</br>
@@ -102,7 +108,8 @@ LocalStorage Service</br>
 <br/>
 <br/>
 <br/>
-<strong>Kullanıcı Profil Bölümü (Kullanıcı, Admin)</strong>
+<h4><strong>Kullanıcı Profil Bölümü (Kullanıcı, Admin)</strong></h4>
+<br/>
 ![image](https://user-images.githubusercontent.com/193318/114264106-acc9b380-99f1-11eb-908c-e0b0d1c68bd6.png)
 <br/>
 <br/>
