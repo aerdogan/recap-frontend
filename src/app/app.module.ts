@@ -38,6 +38,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { RentalPeriodComponent } from './components/rental-period/rental-period.component';
 import { HomeCardColorDirective } from './directives/home-card-color.directive';
 import { CarimageComponent } from './components/carimage/carimage.component';
+import { RentalFilterPipe } from './pipes/rental-filter.pipe';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { CarimageComponent } from './components/carimage/carimage.component';
     RegisterComponent,
     RentalPeriodComponent,
     HomeCardColorDirective,
-    CarimageComponent
+    CarimageComponent,
+    RentalFilterPipe
   ],
   imports: [
     BrowserModule,

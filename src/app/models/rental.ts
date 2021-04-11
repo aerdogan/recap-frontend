@@ -7,6 +7,7 @@ export interface Rental{
 }
 
 export interface RentalDetail extends Rental{
+    carId:number;
     companyName:string;
     firstName:string;
     lastName:string;
