@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerDetail } from 'src/app/models/customer';
 import { CustomerService } from 'src/app/services/customer.service';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
@@ -31,7 +31,8 @@ export class RentalAddComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private cartService : CartService,
-    private findexService: FindexService
+    private findexService: FindexService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -81,6 +82,7 @@ export class RentalAddComponent implements OnInit {
       if(customerPoint >= carPoint){
         this.cartService.addToCart(rentalModel)
         this.toastrService.success("Sepete eklendi", this.currentCar.name)
+        this.router.navigate(['cart'])
       } else {
         this.toastrService.error('Findex puanınız yetersiz', 'Hata')
       }

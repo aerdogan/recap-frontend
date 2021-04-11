@@ -1,64 +1,61 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <a class="navbar-brand" routerLink="">Ren A Car</a>
-    <button
-      class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcontent"
-      aria-controls="navcontent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" routerLink="">Ren A Car</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navcontent" aria-controls="navcontent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navcontent"> 
+        <div class="collapse navbar-collapse" id="navcontent">
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">          
-          <a class="nav-link" routerLink="">Ana Sayfa</a>
-        </li>
-        <li  *ngIf="roleIfExist('admin')" class="nav-item">
-          <a class="nav-link" routerLink="customer">Müşteriler</a>
-        </li>
-        <li  *ngIf="roleIfExist('admin')" class="nav-item">
-          <a class="nav-link" routerLink="rental">Kira Listesi</a>
-        </li>
-        <li class="nav-item">
-          <span *ngIf="cartCount()" class="badge badge-pill badge-primary"> {{ cartCount() }} </span>
-          <a class="nav-link" routerLink="cart">Sepet</a>
-        </li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Ana Sayfa</a>
+                </li>
+                <li *ngIf="roleIfExist('admin')" class="nav-item">
+                    <a class="nav-link" routerLink="customer">Müşteriler</a>
+                </li>
+                <li *ngIf="roleIfExist('admin')" class="nav-item">
+                    <a class="nav-link" routerLink="rental">Kira Listesi</a>
+                </li>
+                <li class="nav-item">
+                    <span *ngIf="cartCount()" class="badge badge-pill badge-primary"> {{ cartCount() }} </span>
+                    <a class="nav-link" routerLink="cart">Sepet</a>
+                </li>
 
 
-        <li *ngIf="roleIfExist('admin')" class="nav-item dropdown">
-          <a  class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown">Yönetim</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-            <li><a class="dropdown-item" routerLink="carlist">Araç Listesi</a></li>
-            <li><a class="dropdown-item" routerLink="brandlist">Marka Listesi</a></li>
-            <li><a class="dropdown-item" routerLink="colorlist">Renk Listesi</a></li>
-          </ul>
-      </li>
+                <li *ngIf="roleIfExist('admin')" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown">Yönetim</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="carlist">Araç Listesi</a></li>
+                        <li><a class="dropdown-item" routerLink="brandlist">Marka Listesi</a></li>
+                        <li><a class="dropdown-item" routerLink="colorlist">Renk Listesi</a></li>
+                    </ul>
+                </li>
 
-      </ul>     
-      
-    </div>
+            </ul>
 
-    <div *ngIf="!isAuth()">
-      <button class="btn btn-outline-primary" routerLink="register">Kayıt Ol</button>
-      <button class="btn btn-primary ms-lg-2" routerLink="login">Giriş Yap</button>
-    </div>
+        </div>
 
-   <div *ngIf="isAuth()">
-      <div class="btn-group">
-         <button class="btn dropdown-toggle btn-info btn-sm" data-bs-toggle="dropdown">
+        <div *ngIf="!isAuth()">
+            <button class="btn btn-outline-primary" routerLink="register">Kayıt Ol</button>
+            <button class="btn btn-primary ms-lg-2" routerLink="login">Giriş Yap</button>
+        </div>
+
+        <div *ngIf="isAuth()">
+            <div class="btn-group">
+                <button class="btn dropdown-toggle btn-info btn-sm" data-bs-toggle="dropdown">
             <fa-icon [icon]="userIcon" size="lg"></fa-icon>
-            Ahmet Erdoğan
+            {{ userName }}
          </button>
-   
-         <div class="dropdown-menu dropdown-menu-end">
-            <div class="dropdown-item" routerLink="profile"> Profil </div>
-            <div class="dropdown-item" (click)="logout()" > Çıkış Yap </div>
-         </div>
-      </div>
-   </div>
-    
-  </div>
-</nav>
 
+                <div class="dropdown-menu dropdown-menu-end">
+                    <div class="dropdown-item" routerLink="profile"> Profil </div>
+                    <div class="dropdown-item" (click)="logout()"> Çıkış Yap </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>

@@ -12,6 +12,8 @@ import { CartService } from 'src/app/services/cart.service';
 export class NaviComponent implements OnInit {
   userIcon = faUserCircle;
 
+  userName: string
+
   constructor(
     private authService: AuthService,
     private cartService: CartService,
@@ -32,6 +34,7 @@ export class NaviComponent implements OnInit {
   }
 
   isAuth() {
+    this.userName = this.authService.tokenDetail.username
     return this.authService.isAuthenticated();
   }
 
