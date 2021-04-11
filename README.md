@@ -75,13 +75,14 @@ LocalStorage Service</br>
 
 <h4>Findex puan kontrolü</h4>
 
-![image](https://user-images.githubusercontent.com/193318/114285781-6fe9d500-9a62-11eb-8368-f7b9a4322ac2.png)
+![image](https://user-images.githubusercontent.com/193318/114320402-7a69a480-9b1e-11eb-8720-1da89efeabf3.png)
 
 
 
 <h4>Sepet Kontrolü</h4>
 
-![image](https://user-images.githubusercontent.com/193318/114264706-1d260400-99f5-11eb-9e9a-e548f31bf84f.png)
+![image](https://user-images.githubusercontent.com/193318/114320490-cb799880-9b1e-11eb-8882-dd5cddd31065.png)
+
 
 
 
