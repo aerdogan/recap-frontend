@@ -6,8 +6,7 @@
 • Araç listesini ve detaylarını görebilirler</br>
 • Marka ve Renk seçeneklerine göre arama yapabilirler</br>
 • Müsait araçları kiralama yapabilirler</br>
-• Yönetici olarak giriş yapabilir, araçları, renkleri, </br>
-markaları ve araç resimlerini yönetebilirler</br>
+• Yönetici olarak giriş yapabilir, araçları, renkleri, markaları ve araç resimlerini yönetebilirler</br>
 • Kiralanan araca findex puanı yeterli ise kredi kartı ile ödeme yapabilirler</br>
 • Kredi kartlarını kayıt edip daha sonra kolayca ulaşabilirler</br>
 • Kiradaki bir aracı teslim alabilirler</br>
