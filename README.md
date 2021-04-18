@@ -54,10 +54,7 @@ Guards</br>
 LocalStorage Service</br>
 
 
-<h3>İletişim :</h3>
-
-<p><a href="mailto:tuxposta@gmail.com">E- Mail</a></p>
-<p><a href="www.linkedin.com/in/ahmet-erdogan-2020">LinkedIn</a></p>  
+<h3>İletişim :</h3> <a href="mailto:tuxposta@gmail.com">E- Mail</a>  <a href="www.linkedin.com/in/ahmet-erdogan-2020">LinkedIn</a>
 
 
 <h4>Ana Sayfa</h4>
