@@ -49,7 +49,7 @@ export class CarimageComponent implements OnInit {
       this.getCarDetailsById(this.carId)
       this.toastrService.success("Resim silindi","Başarılı")
     }, responseError => {
-      this.toastrService.success("Resim silinemedi!","Hata")
+      this.toastrService.error("Resim silinemedi!","Hata")
     })
   }
 
