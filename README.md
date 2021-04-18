@@ -13,7 +13,6 @@
 • Kiralanan araç listesini ve geçmişini listeleyebilirler</br>
 
 
-
 <h4>Kullanılan Teknolojiler ( Backend )</h4>
 
 
@@ -55,6 +54,12 @@ Guards</br>
 LocalStorage Service</br>
 
 
+<h3>İletişim :</h3>
+
+<p><a href="mailto:tuxposta@gmail.com">E- Mail</a></p>
+<p><a href="www.linkedin.com/in/ahmet-erdogan-2020">LinkedIn</a></p>  
+
+
 <h4>Ana Sayfa</h4>
 
 ![image](https://user-images.githubusercontent.com/193318/114316808-d8da5700-9b0d-11eb-844b-5dbf26f9cf2b.png)
@@ -82,7 +87,6 @@ LocalStorage Service</br>
 <h4>Sepet Kontrolü</h4>
 
 ![image](https://user-images.githubusercontent.com/193318/114320490-cb799880-9b1e-11eb-8882-dd5cddd31065.png)
-
 
 
 
